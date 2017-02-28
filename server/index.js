@@ -8,6 +8,13 @@ const app = express();
 
 let url = "http://api.eventful.com/rest/events/search?app_key=b7BFXqw9rckW5SzC&keywords=books&location=San+Francisco&date=Future";
 
+
+// Four Square
+// CLIENT_ID
+// EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0
+// CLIENT_SECRET
+// FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE
+
 //Eventful API Key
 // b7BFXqw9rckW5SzC
 // example
