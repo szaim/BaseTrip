@@ -1,7 +1,7 @@
 const express = require("express");
 const request = require("request");
 const unirest = require("unirest");
-const parser = require("xml2json");
+
 
 const app = express();
 
@@ -54,9 +54,6 @@ function formatted_date()
 }
 
 
-app.get('/', function(req, res) {
-	res.send('BaseTrip');
-});
 
 
 app.get('/venue/search/:search', function(req, res) {
@@ -89,6 +86,6 @@ app.get('/venue/explore/:explore', function(req, res) {
 
 
 
-app.listen(process.env.PORT || 8080, function(){
+app.listen(process.env.PORT || 8000, function(){
 	console.log("EventBase server running!!");
 });
