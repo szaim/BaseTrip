@@ -1,14 +1,15 @@
-var actions = require("./action");
+const actions = require("./action");
 
-var initialState = {
+let initialState = {
 	list: [],
 
 };
 
-var reducer = function(state, action) {
+export const reducer = (state, action) => {
 	state = state || initialState;
 	if (action.type == actions.FETCH_DATA_SUCCESS) {
-		characterData = action.data;
+		eventData = action.data;
+		console.log(eventData);
 		return {
 
 			list: action.data
@@ -23,5 +24,3 @@ var reducer = function(state, action) {
 	return state;
 
 }
-
-module.exports = reducer;

@@ -1,23 +1,29 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var store = require('./redux/store');
-var Provider = require('react-redux').Provider;
+const React = require('react');
+const ReactDOM = require('react-dom');
+const store = require('./redux/store');
+const Provider = require('react-redux').Provider;
+const Search = require('./components/container/Search');
 
 
 
-var App = React.createClass({
+const App = React.createClass({
    render: function() {
         return (
             <div>
-                hello
+                <Search />
             </div>
         );
    }
 
 });
-// var routes = (
-//     <Provider store={store}>
-//         <App />
-//     </Provider>
-// );
-ReactDOM.render(<App />, document.getElementById('app'));
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    ReactDOM.render(
+    <Provider store={store}>
+    	<App />
+    </Provider>,
+    	document.getElementById('app'));
+});

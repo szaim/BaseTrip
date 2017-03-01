@@ -5,6 +5,7 @@ const unirest = require("unirest");
 
 const app = express();
 
+app.use('/', express.static('build'));
 
 let url = "https://api.foursquare.com/v2/venues/explore";
 
@@ -17,6 +18,7 @@ let clientSecret = "FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE";
 let location = '40.7,-74';
 let date = formatted_date();
 
+https://api.foursquare.com/v2/venues/4471bf9af964a5209c331fe3/photos?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE
 
 console.log(date);
 
@@ -32,7 +34,7 @@ console.log(date);
 // https://api.foursquare.com/v2/venues/search?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE&ll=40.7,-74&query=sushi&v=20170227
 
 // Explore
-// https://api.foursquare.com/v2/venues/explore?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE&ll=40.7,-74&query=food&v=20170227
+// https://api.foursquare.com/v2/venues/explore?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE&ll=40.7,-74&query=food&v=20170227&venuePhotos=1
 
 // https://api.foursquare.com/v2/events/categories/food?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE&ll=40.7,-74&v=20170227
 
@@ -67,7 +69,7 @@ app.get('/venue/search/:search', function(req, res) {
 
 app.get('/venue/explore/:explore', function(req, res) {
 	let query = req.params.explore;
-	unirest.get('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + location + '&query=' + query + '&v=' + date)
+	unirest.get('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + location + '&query=' + query + '&v=' + date + '&venuePhotos=1')
 	.end(function(data){
 		return res.send(data);
 	});
@@ -78,6 +80,10 @@ app.get('/venue/explore/:explore', function(req, res) {
 
 
 
+//image sample prefix + size + suffix
+// https://igx.4sqi.net/img/general/300x500/48623284_fqbPs5xy6jImyJu6U2w_xkkR7lilKCVfZEE8qSC66WU.jpg
+//add venuePhotos=1 (to get featured photo)
+ // https://api.foursquare.com/v2/venues/explore?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE&ll=40.7,-74&query=food&v=20170227&venuePhotos=1
 
 
 
@@ -85,7 +91,6 @@ app.get('/venue/explore/:explore', function(req, res) {
 
 
 
-
-app.listen(process.env.PORT || 8000, function(){
+app.listen(process.env.PORT || 8080, function(){
 	console.log("EventBase server running!!");
 });
