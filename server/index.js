@@ -48,10 +48,11 @@ function formatted_date()
    if (d.getMonth()+1 < 10){
    		var month = '0' + (d.getMonth()+1);
    }
-    else if (d.getDate()+1 < 10){
+   if (d.getDate()+1 < 10){
    		var day = '0' + d.getDate();
    }
    result += d.getFullYear() +''+ month +''+ day;
+   console.log(result);
    return result;
 }
 
@@ -59,16 +60,19 @@ function formatted_date()
 
 
 app.get('/venue/search/:search', function(req, res) {
-	let query = req.params.search;
-	unirest.get('https://api.foursquare.com/v2/venues/search?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + location + '&query=' + query + '&v=' + date)
+	let search = req.params.search;
+	unirest.get('https://api.foursquare.com/v2/venues/search?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + location + '&query=' + search + '&v=' + date)
 	.end(function(data){
 		return res.send(data);
 	});
 });
 
 
-app.get('/venue/explore/:explore', function(req, res) {
+app.get('/venue/explore/:explore/:location', function(req, res) {
 	let query = req.params.explore;
+   let location = req.params.location;
+   let url = 'https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + location + '&query=' + query + '&v=' + date + '&venuePhotos=1';
+   console.log(url);
 	unirest.get('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + location + '&query=' + query + '&v=' + date + '&venuePhotos=1')
 	.end(function(data){
 		return res.send(data);

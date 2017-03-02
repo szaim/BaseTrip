@@ -1,19 +1,19 @@
 const actions = require("./action");
 
 let initialState = {
-	list: [],
-
+	categorySearch: []
 };
 
-export const reducer = (state, action) => {
+const reducer = (state, action) => {
 	state = state || initialState;
 	if (action.type == actions.FETCH_DATA_SUCCESS) {
-		eventData = action.data;
-		console.log(eventData);
-		return {
-
-			list: action.data
-		}
+		
+		let state = Object.assign({}, state, {
+			categorySearch: action.data.body.response.groups[0].items
+		});
+		console.log('fetch data success - category search', state);
+		console.log('action success hit!');
+		return action.data;
 	}
 	else if(action.type === actions.FETCH_DATA_ERROR) {
 		return {
@@ -24,3 +24,5 @@ export const reducer = (state, action) => {
 	return state;
 
 }
+
+exports.reducer = reducer;

@@ -16,9 +16,9 @@ export const fetchDataError = function(error) {
 	}
 }
 
-export const fetchExplore = (searchTerm) => {
+export const fetchExplore = (searchTerm, location) => {
  return function(dispatch) {
-    let url = '/venue/explore/'+ searchTerm;
+    let url = '/venue/explore/'+ searchTerm + '/' + location;
     return fetch(url).then(function(response) {
      if (response.status < 200 || response.status >= 300) {
        let error = new Error(response.statusText);
