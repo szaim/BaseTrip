@@ -1,17 +1,21 @@
-const Reat = require('react');
+const React = require('react');
 
 
 
-const CardEevent = function(props) {
+const CardEvent = function(props) {
+	var link = '300x500';
 	return (
 		<div>
-			<img src={props.img} />
+			
+			<img src={`${props.prefix}300x500${props.suffix}`} />
 			<h3>{props.title}</h3>
-			<span>{props.score}</span>
+			<span>{props.rating}</span>
 		</div>
 
 	)
 };
 
 
-module.exports = CardEevent;
+module.exports = CardEvent;
+
+// https://igx.4sqi.net/img/general/300x500/48623284_fqbPs5xy6jImyJu6U2w_xkkR7lilKCVfZEE8qSC66WU.jpg

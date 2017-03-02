@@ -13,7 +13,7 @@ const reducer = (state, action) => {
 		});
 		console.log('fetch data success - category search', state);
 		console.log('action success hit!');
-		return action.data;
+		return state;
 	}
 	else if(action.type === actions.FETCH_DATA_ERROR) {
 		return {

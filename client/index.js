@@ -3,7 +3,7 @@ const ReactDOM = require('react-dom');
 const store = require('./redux/store');
 const Provider = require('react-redux').Provider;
 const Search = require('./components/container/Search');
-
+const Category = require('./components/container/Category');
 
 
 const App = React.createClass({
@@ -11,6 +11,8 @@ const App = React.createClass({
         return (
             <div>
                 <Search />
+                <Category />
+
             </div>
         );
    }
