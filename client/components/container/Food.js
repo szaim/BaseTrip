@@ -7,13 +7,12 @@ const actions = require('../../redux/action');
 
 const Food = React.createClass({
 
-	componentDidMount: function() {
+	componentWillMount: function() {
 		this.props.dispatch(actions.fetchFood('40.7,-74'));
 	},
 
 	render: function() {
 		let foodList = this.props.food.map((event,index) => {
-			// console.log('event', event.venue.photos.groups);
 			let prefix;
 			let suffix;
 			//if no photos set default image

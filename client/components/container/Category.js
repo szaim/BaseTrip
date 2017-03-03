@@ -10,7 +10,6 @@ const Category = React.createClass({
 	render: function() {
 
 		let cardList = this.props.cards.map((event,index) => {
-			// console.log('event', event.venue.photos.groups);
 			let prefix;
 			let suffix;
 			//if no photos set default image

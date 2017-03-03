@@ -17,4 +17,3 @@ const CardEvent = function(props) {
 
 module.exports = CardEvent;
 
-// https://igx.4sqi.net/img/general/300x500/48623284_fqbPs5xy6jImyJu6U2w_xkkR7lilKCVfZEE8qSC66WU.jpg

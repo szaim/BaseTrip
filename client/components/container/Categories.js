@@ -10,26 +10,10 @@ const Outdoor = require('./Outdoor');
 
 
 const Categories = React.createClass({
-
-	// componentWillMount: function() {
-	// 	this.props.dispatch(actions.fetchFood('40.7,-74'));
-	// 	this.props.dispatch(actions.fetchMusic('40.7,-74'));
-	// 	this.props.dispatch(actions.fetchNightLife('40.7,-74'));
-	// 	this.props.dispatch(actions.fetchOutdoor('40.7,-74'));
-	// },
-
-	// componentDidMount: function() {
-	// 	this.props.dispatch(actions.fetchFood('40.7,-74'));
-	// 	this.props.dispatch(actions.fetchMusic('40.7,-74'));
-	// 	this.props.dispatch(actions.fetchNightLife('40.7,-74'));
-	// 	this.props.dispatch(actions.fetchOutdoor('40.7,-74'));
-	// },
-
 	render: function() {
 		return (
 		<div className='container'>
 			<Food />
-			<Music />
 			<NightLife />
 			<Outdoor />
 		</div>

@@ -28,10 +28,6 @@ searchItem: function(event){
 });
 
 
-// var mapStateToProps = function(state, props) {
-// 	return {
-// 	}
-// };
 
 const Container = connect()(Search);
 
