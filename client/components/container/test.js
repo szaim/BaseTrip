@@ -5,14 +5,8 @@ const actions = require('../../redux/action');
 
 
 
-const Music = React.createClass({
-
-	componentDidMount: function() {
-		this.props.dispatch(actions.fetchMusic('40.7,-74'));
-	},
-
-	render: function() {
-		let musicList = this.props.music.map((event,index) => {
+const Test = function(props){
+		let cardList = props.data.map((event,index) => {
 			// console.log('event', event.venue.photos.groups);
 			let prefix;
 			let suffix;
@@ -34,23 +28,14 @@ const Music = React.createClass({
 			)
 		});
 		return (
-				<div className='row'>
-					<h1>Music</h1>
-					{musicList}
-				</div>
+			<div>
+				<h1>{props.title}</h1>
+				{cardList}
+			</div>
+
 		)
 
-	}
-});
-
-let mapStateToProps = function(state, props) {
-	return {
-		music: state.music
-	}
 };
 
 
-
-const Container = connect(mapStateToProps)(Music);
-
-module.exports = Container;
+module.exports = Test;

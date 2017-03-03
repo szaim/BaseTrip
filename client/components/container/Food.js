@@ -7,7 +7,7 @@ const actions = require('../../redux/action');
 
 const Food = React.createClass({
 
-	componentWillMount: function() {
+	componentDidMount: function() {
 		this.props.dispatch(actions.fetchFood('40.7,-74'));
 	},
 

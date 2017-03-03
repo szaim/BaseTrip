@@ -7,9 +7,9 @@ const actions = require('../../redux/action');
 
 const Outdoor = React.createClass({
 
-	componentWillMount: function() {
-		this.props.dispatch(actions.fetchOutdoor('40.7,-74'));
-	},
+	// componentDidMount: function() {
+	// 	this.props.dispatch(actions.fetchOutdoor('40.7,-74'));
+	// },
 
 	render: function() {
 		let outdoorList = this.props.outdoor.map((event,index) => {

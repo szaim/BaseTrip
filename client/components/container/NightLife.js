@@ -7,7 +7,7 @@ const actions = require('../../redux/action');
 
 const NightLife = React.createClass({
 
-	componentWillMount: function() {
+	componentDiDMount: function() {
 		this.props.dispatch(actions.fetchNightLife('40.7,-74'));
 	},
 
