@@ -39,6 +39,10 @@ console.log(date);
 // https://api.foursquare.com/v2/events/categories/food?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE&ll=40.7,-74&v=20170227
 
 
+//categories
+
+https://api.foursquare.com/v2/events/categories?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE&query=food,outdoor&ll=40.7,-74&v=20170227
+
 function formatted_date()
 {
    var result="";

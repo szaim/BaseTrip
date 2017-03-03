@@ -7,6 +7,13 @@ const actions = require('../../redux/action');
 
 const Category = React.createClass({
 
+	componentWillMount: function() {
+		this.props.dispatch(actions.fetchFood('40.7,-74'));
+		this.props.dispatch(actions.fetchMusic('40.7,-74'));
+		this.props.dispatch(actions.fetchNightLife('40.7,-74'));
+		this.props.dispatch(actions.fetchOutdoor('40.7,-74'));
+	},
+
 	render: function() {
 		// var cardList = this.props.cards.map(function(event, index) {
 		// 	return (
@@ -21,9 +28,10 @@ const Category = React.createClass({
 		// 	)
 		// });
 		let cardList = this.props.cards.map((event,index) => {
-			console.log('event', event.venue.photos.groups);
+			// console.log('event', event.venue.photos.groups);
 			let prefix;
 			let suffix;
+			//if no photos set default image
 			if(!event.venue.photos.groups.length){
 				prefix = 'https://igx.4sqi.net/img/general/'; 
 				suffix = '/48623284_fqbPs5xy6jImyJu6U2w_xkkR7lilKCVfZEE8qSC66WU.jpg';
