@@ -5,11 +5,14 @@ const actions = require('../../redux/action');
 
 
 
-const Category = React.createClass({
+const NightLife = React.createClass({
+
+	componentWillMount: function() {
+		this.props.dispatch(actions.fetchNightLife('40.7,-74'));
+	},
 
 	render: function() {
-
-		let cardList = this.props.cards.map((event,index) => {
+		let nightLifeList = this.props.nightLife.map((event,index) => {
 			// console.log('event', event.venue.photos.groups);
 			let prefix;
 			let suffix;
@@ -31,10 +34,10 @@ const Category = React.createClass({
 			)
 		});
 		return (
-			<div>
-				{cardList}
-			</div>
-
+				<div className='row'>
+					<h1>NightLife</h1>
+					{nightLifeList}
+				</div>
 		)
 
 	}
@@ -42,10 +45,12 @@ const Category = React.createClass({
 
 var mapStateToProps = function(state, props) {
 	return {
-		cards: state.categorySearch
+		nightLife: state.nightLife
 	}
 };
 
-const Container = connect(mapStateToProps)(Category);
+
+
+const Container = connect(mapStateToProps)(NightLife);
 
 module.exports = Container;

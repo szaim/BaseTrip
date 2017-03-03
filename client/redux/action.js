@@ -57,7 +57,7 @@ export const fetchNightLifeSuccess = function(nightLife) {
 };
 
 export const FETCH_NIGHTLIFE_ERROR = 'FETCH_NIGHTLIFE_ERROR';
-export const fetchNightLifeError = function(nightLife) {
+export const fetchNightLifeError = function(error) {
   return {
     type: FETCH_NIGHTLIFE_ERROR,
     error: error
@@ -73,7 +73,7 @@ export const fetchOutdoorSuccess = function(outdoor) {
 };
 
 export const FETCH_OUTDOOR_ERROR = 'FETCH_OUTDOOR_ERROR';
-export const fetchOutdoorError = function(outdoor) {
+export const fetchOutdoorError = function(error) {
   return {
     type: FETCH_OUTDOOR_ERROR,
     error: error
@@ -160,7 +160,7 @@ export const fetchMusic = (location) => {
 
 export const fetchNightLife = (location) => {
  return function(dispatch) {
-    let url = '/venue/explore/nightlife/' + location;
+    let url = '/venue/explore/night&life/' + location;
     return fetch(url).then(function(response) {
      if (response.status < 200 || response.status >= 300) {
        let error = new Error(response.statusText);

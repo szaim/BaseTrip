@@ -18,8 +18,8 @@ searchItem: function(event){
 		return (
 			<div>
 				<form onSubmit={this.searchItem}>
-					<input type='text' ref='location' placeholder='location' />
-					<input type='text' ref='exploreItem' placeholder='search place' />
+					<input type='text' ref='location' placeholder='location' required />
+					<input type='text' ref='exploreItem' placeholder='search category' required />
 					<button type='submit'>Submit</button>
 				</form>
 			</div>

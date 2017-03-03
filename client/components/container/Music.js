@@ -5,11 +5,14 @@ const actions = require('../../redux/action');
 
 
 
-const Category = React.createClass({
+const Music = React.createClass({
+
+	componentWillMount: function() {
+		this.props.dispatch(actions.fetchMusic('40.7,-74'));
+	},
 
 	render: function() {
-
-		let cardList = this.props.cards.map((event,index) => {
+		let musicList = this.props.music.map((event,index) => {
 			// console.log('event', event.venue.photos.groups);
 			let prefix;
 			let suffix;
@@ -31,21 +34,23 @@ const Category = React.createClass({
 			)
 		});
 		return (
-			<div>
-				{cardList}
-			</div>
-
+				<div className='row'>
+					<h1>Music</h1>
+					{musicList}
+				</div>
 		)
 
 	}
 });
 
-var mapStateToProps = function(state, props) {
+let mapStateToProps = function(state, props) {
 	return {
-		cards: state.categorySearch
+		music: state.music
 	}
 };
 
-const Container = connect(mapStateToProps)(Category);
+
+
+const Container = connect(mapStateToProps)(Music);
 
 module.exports = Container;
