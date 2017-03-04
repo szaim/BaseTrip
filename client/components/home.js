@@ -2,7 +2,7 @@ const Categories = require('./container/Categories');
 const React = require('react');
 const connect = require('react-redux').connect;
 const actions = require('../redux/action');
-
+const Hello = require('./container/test');
 
 
 const Home = React.createClass({
@@ -14,8 +14,8 @@ const Home = React.createClass({
 	},
 	render: function() {
 		return (
-		<div>
-			<Categories />
+		<div className="test">
+		<Hello />
 		</div>
 		)
 	}
@@ -25,3 +25,4 @@ const Home = React.createClass({
 const Container = connect()(Home);
 
 module.exports = Container;
+

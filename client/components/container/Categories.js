@@ -3,7 +3,6 @@ const CardEvent = require('../cardEvent');
 const connect = require('react-redux').connect;
 const actions = require('../../redux/action');
 const Food = require('./Food');
-const Music = require('./Music');
 const NightLife = require('./NightLife');
 const Outdoor = require('./Outdoor');
 

@@ -4,7 +4,6 @@ const connect = require('react-redux').connect;
 const actions = require('../../redux/action');
 
 
-
 const Food = React.createClass({
 
 	componentWillMount: function() {
@@ -12,6 +11,10 @@ const Food = React.createClass({
 	},
 
 	render: function() {
+	    let settings = {
+			  slideRatio: 4,
+			  slidePending: true
+	    };
 		let foodList = this.props.food.map((event,index) => {
 			let prefix;
 			let suffix;
@@ -33,9 +36,19 @@ const Food = React.createClass({
 			)
 		});
 		return (
-				<div className='row'>
+				<div className="Container">
 					<h1>Food & Drink</h1>
-					{foodList}
+						<div className="row">
+							<div className="slider responsive">
+								{foodList}
+							</div>
+						</div>
+						<div className="prev">
+							<span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						</div>
+						<div className="next">
+							<span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						</div>
 				</div>
 		)
 	}
