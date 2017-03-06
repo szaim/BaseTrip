@@ -87,6 +87,20 @@ export const nextFood = function() {
   }
 }
 
+export const NEXT_NIGHTLIFE = 'NEXT_NIGHTLIFE';
+export const nextNightLife = function() {
+  return {
+    type: NEXT_NIGHTLIFE
+  }
+}
+
+export const NEXT_OUTDOOR = 'NEXT_OUTDOOR';
+export const nextOutdoor = function() {
+  return {
+    type: NEXT_OUTDOOR
+  }
+}
+
 export const fetchExplore = (searchTerm, location) => {
  return function(dispatch) {
     let url = '/venue/explore/'+ searchTerm + '/' + location;

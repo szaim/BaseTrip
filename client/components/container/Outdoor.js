@@ -10,9 +10,13 @@ const Outdoor = React.createClass({
 	// componentWillMount: function() {
 	// 	this.props.dispatch(actions.fetchOutdoor('40.7,-74'));
 	// },
+	onNext: function() {
+		this.props.dispatch(actions.nextOutdoor());
+		console.log("clicked");
+	},
 
 	render: function() {
-		let outdoorList = this.props.outdoor.map((event,index) => {
+		let outdoorList = this.props.subOutdoor.map((event,index) => {
 			// console.log('event', event.venue.photos.groups);
 			let prefix;
 			let suffix;
@@ -38,6 +42,7 @@ const Outdoor = React.createClass({
 
 		return (
 				<div className='row'>
+				<button type='button' onClick={this.onNext}>Next</button>
 					<h1>Outdoor</h1>
 					{outdoorList}
 				</div>
@@ -48,7 +53,8 @@ const Outdoor = React.createClass({
 
 var mapStateToProps = function(state, props) {
 	return {
-		outdoor: state.outdoor
+		outdoor: state.outdoor,
+		subOutdoor: state.subOutdoor
 	}
 };
 

@@ -10,9 +10,13 @@ const NightLife = React.createClass({
 	// componentWillMount: function() {
 	// 	this.props.dispatch(actions.fetchNightLife('40.7,-74'));
 	// },
+	onNext: function() {
+		this.props.dispatch(actions.nextNightLife());
+		console.log("clicked");
+	},
 
 	render: function() {
-		let nightLifeList = this.props.nightLife.map((event,index) => {
+		let nightLifeList = this.props.subNightLife.map((event,index) => {
 			// console.log('event', event.venue.photos.groups);
 			let prefix;
 			let suffix;
@@ -35,6 +39,7 @@ const NightLife = React.createClass({
 		});
 		return (
 				<div className='row'>
+				<button type='button' onClick={this.onNext}>Next</button>
 					<h1>NightLife</h1>
 					{nightLifeList}
 				</div>
@@ -45,7 +50,8 @@ const NightLife = React.createClass({
 
 var mapStateToProps = function(state, props) {
 	return {
-		nightLife: state.nightLife
+		nightLife: state.nightLife,
+		subNightLife: state.subNightLife
 	}
 };
 
