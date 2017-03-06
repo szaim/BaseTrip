@@ -41,16 +41,21 @@ const reducer = (state, action) => {
 		countertwo = counter;
 		counter += 4;
 		console.log('state data', state);
-		// for(var i = countertwo; i < counter; i++) {
-		// 	foodArray.push(action.food.body.response.groups[0].items[i]);
-		// }
-		// console.log('next food array', foodArray);
-		// 	let state = Object.assign({}, state, {
-		// 	subFood: foodArray
-		// });
-		return state;
+		if (counter > state.food.length) {
+			counter = 4;
+			countertwo = 0;
+		}
+		for(var i = countertwo; i < counter; i++) {
+			foodArray.push(state.food[i]);
+		}
+		console.log('next food array', foodArray);
+			let newstate = Object.assign({}, state, {
+			subFood: foodArray
+		});
+		return newstate;
 	}
 	else if (action.type === actions.FETCH_FOOD_SUCCESS) {
+
 		for(var i = countertwo; i < counter; i++) {
 			foodArray.push(action.food.body.response.groups[0].items[i]);
 		}
@@ -67,20 +72,6 @@ const reducer = (state, action) => {
 		return state;
 	}
 	else if (action.type === actions.FETCH_FOOD_ERROR) {
-		return {
-			error: action.error
-		}
-	}
-	//MUSIC
-	else if (action.type === actions.FETCH_MUSIC_SUCCESS) {
-		
-		let state = Object.assign({}, state, {
-			music: action.music.body.response.groups[0].items
-		});
-		console.log('fetch music success - category search', state);
-		return state;
-	}
-	else if(action.type === actions.FETCH_MUSIC_ERROR) {
 		return {
 			error: action.error
 		}

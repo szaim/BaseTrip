@@ -20,7 +20,7 @@ const Food = React.createClass({
 			  slideRatio: 4,
 			  slidePending: true
 	    };
-		let foodList = this.props.food.map((event,index) => {
+		let foodList = this.props.subFood.map((event,index) => {
 			let prefix;
 			let suffix;
 			//if no photos set default image
@@ -56,7 +56,8 @@ const Food = React.createClass({
 
 let mapStateToProps = function(state, props) {
 	return {
-		food: state.food
+		food: state.food,
+		subFood: state.subFood
 	}
 };
 

@@ -17,7 +17,7 @@ let clientID = "EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0";
 let clientSecret = "FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE";
 let location = '40.7,-74';
 let date = formatted_date();
-let limit = '&limit=10';
+// let limit = '&limit=16';
 
 https://api.foursquare.com/v2/venues/4471bf9af964a5209c331fe3/photos?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE
 
@@ -78,7 +78,7 @@ app.get('/venue/explore/:explore/:location', function(req, res) {
    let location = req.params.location;
    // let url = 'https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + location + '&query=' + query + '&v=' + date + '&venuePhotos=1';
    // console.log(url);
-	unirest.get('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + location + '&query=' + query + '&v=' + date + '&venuePhotos=1' + limit)
+	unirest.get('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + location + '&query=' + query + '&v=' + date + '&venuePhotos=1')
 	.end(function(data){
 		return res.send(data);
 	});
