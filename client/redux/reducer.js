@@ -8,6 +8,10 @@ let initialState = {
 	outdoor: []
 };
 
+let foodArray = [];
+let counter = 4;
+let countertwo = 0;
+
 const reducer = (state, action) => {
 	state = state || initialState;
 
@@ -26,21 +30,32 @@ const reducer = (state, action) => {
 		}
 	}
 	//FOOD
-	if (action.type == actions.FETCH_FOOD_SUCCESS) {
+	//Need to remove items from prior foodArray (when click nextFood - foodArray is doubled)
+	//Add if condition if reaches max counter (30) to reset both counters
+	else if(action.type === actions.NEXT_FOOD){
+		console.log('next food hit');
+		countertwo = counter;
+		counter += 4;
 		
+	}
+	else if (action.type == actions.FETCH_FOOD_SUCCESS) {
+		for(var i = countertwo; i < counter; i++) {
+			foodArray.push(action.food.body.response.groups[0].items[i]);
+		}
+		console.log('foodArray', foodArray);
 		let state = Object.assign({}, state, {
-			food: action.food.body.response.groups[0].items
+			food: foodArray
 		});
 		console.log('fetch food success - category search', state);
 		return state;
 	}
-	else if(action.type === actions.FETCH_FOOD_ERROR) {
+	else if (action.type === actions.FETCH_FOOD_ERROR) {
 		return {
 			error: action.error
 		}
 	}
 	//MUSIC
-	if (action.type == actions.FETCH_MUSIC_SUCCESS) {
+	else if (action.type == actions.FETCH_MUSIC_SUCCESS) {
 		
 		let state = Object.assign({}, state, {
 			music: action.music.body.response.groups[0].items
@@ -54,7 +69,7 @@ const reducer = (state, action) => {
 		}
 	}
 	//NIGHTLIFE
-	if (action.type == actions.FETCH_NIGHTLIFE_SUCCESS) {
+	else if (action.type == actions.FETCH_NIGHTLIFE_SUCCESS) {
 		
 		let state = Object.assign({}, state, {
 			nightLife: action.nightLife.body.response.groups[0].items
@@ -68,7 +83,7 @@ const reducer = (state, action) => {
 		}
 	}
 	//OUTDOOR
-	if (action.type == actions.FETCH_OUTDOOR_SUCCESS) {
+	else if (action.type == actions.FETCH_OUTDOOR_SUCCESS) {
 		
 		let state = Object.assign({}, state, {
 			outdoor: action.outdoor.body.response.groups[0].items

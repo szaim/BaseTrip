@@ -80,6 +80,13 @@ export const fetchOutdoorError = function(error) {
   }
 }
 
+export const NEXT_FOOD = 'NEXT_FOOD';
+export const nextFood = function() {
+  return {
+    type: NEXT_FOOD
+  }
+}
+
 export const fetchExplore = (searchTerm, location) => {
  return function(dispatch) {
     let url = '/venue/explore/'+ searchTerm + '/' + location;
@@ -209,6 +216,9 @@ export const fetchOutdoor = (location) => {
    });
   };
 };
+
+
+
 
 // export const fetchSearch = (searchTerm) => {
 //  return function(dispatch) {

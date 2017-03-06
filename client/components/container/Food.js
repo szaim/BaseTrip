@@ -6,8 +6,13 @@ const actions = require('../../redux/action');
 
 const Food = React.createClass({
 
-	componentWillMount: function() {
+	// componentWillMount: function() {
+	// 	this.props.dispatch(actions.fetchFood('40.7,-74'));
+	// },
+	onNext: function() {
+		this.props.dispatch(actions.nextFood());
 		this.props.dispatch(actions.fetchFood('40.7,-74'));
+		console.log("clicked");
 	},
 
 	render: function() {
@@ -39,8 +44,10 @@ const Food = React.createClass({
 
 	
 		<div className='row'>
+			<button type='button' onClick={this.onNext}>Next</button>
 			<h1>Food & Drink</h1>
 				{foodList}
+		
 		</div>
 
 		)
