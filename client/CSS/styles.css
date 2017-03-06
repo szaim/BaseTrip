@@ -1,0 +1,64 @@
+
+
+/**************************** Header ****************************/
+
+.header {
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    height: 60px;
+    margin-left: 0px;	
+}
+
+.header-wrapper {
+    margin-right: 50px;
+    margin-left: 50px;	
+}
+
+.brandName {
+    font-family: BrushScriptMT;
+    font-size: 48px;
+    color: #F6A623;
+    letter-spacing: -1.16px;
+    z-index: 1;
+    position: absolute;
+    top: -7px;	
+}
+
+.navbar-brand {
+	/* Sign Up: */
+    font-family: ArialMT;
+    font-size: 20px;
+    color: #4f4a4a;
+    letter-spacing: -0.87px;
+    z-index: 1;
+    position: relative;
+    top: 7px;
+}
+
+.left-navbar {
+	left: 19px;
+}
+
+.body-container {
+    margin-top: 4em;
+}
+
+.textHeader-paragraph {
+	font-family: inherit !important;
+    font-size: 48px !important;
+    line-height: 56px !important;
+    letter-spacing: -0.8px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    color: #5e5b5b !important;
+    font-weight: 300 !important;
+}
+
+.textHeader {
+    color: #F6A623;
+    font-family: inherit !important;
+    font-size: 48px !important;
+    line-height: 56px !important;
+    letter-spacing: -0.8px !important;
+    font-weight: 500;
+}

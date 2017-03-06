@@ -2,6 +2,7 @@ const Categories = require('./container/Categories');
 const React = require('react');
 const connect = require('react-redux').connect;
 const actions = require('../redux/action');
+const Header = require('./header');
 
 
 
@@ -15,7 +16,15 @@ const Home = React.createClass({
 	render: function() {
 		return (
 		<div>
-		<Categories />
+			<Header />
+			<div className="container body-container">
+				<div>
+					<p className="textHeader-paragraph">
+						<span className="textHeader">Looking for places to go?</span> Find interesting stuff happenning in your area.
+					</p>
+				</div>
+				<Categories />
+			</div>
 		</div>
 		)
 	}
