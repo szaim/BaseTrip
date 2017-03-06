@@ -1,8 +1,11 @@
 const actions = require("./action");
+const update = require('react-addons-update');
+
 
 let initialState = {
 	categorySearch: [],
 	food: [],
+	subFood: [],
 	music: [],
 	nightLife: [],
 	outdoor: []
@@ -16,7 +19,7 @@ const reducer = (state, action) => {
 	state = state || initialState;
 
 	//EXPLORE
-	if (action.type == actions.FETCH_DATA_SUCCESS) {
+	if (action.type === actions.FETCH_DATA_SUCCESS) {
 		
 		let state = Object.assign({}, state, {
 			categorySearch: action.data.body.response.groups[0].items
@@ -34,17 +37,31 @@ const reducer = (state, action) => {
 	//Add if condition if reaches max counter (30) to reset both counters
 	else if(action.type === actions.NEXT_FOOD){
 		console.log('next food hit');
+		foodArray = [];
 		countertwo = counter;
 		counter += 4;
-		
+		console.log('state data', state);
+		// for(var i = countertwo; i < counter; i++) {
+		// 	foodArray.push(action.food.body.response.groups[0].items[i]);
+		// }
+		// console.log('next food array', foodArray);
+		// 	let state = Object.assign({}, state, {
+		// 	subFood: foodArray
+		// });
+		return state;
 	}
-	else if (action.type == actions.FETCH_FOOD_SUCCESS) {
+	else if (action.type === actions.FETCH_FOOD_SUCCESS) {
 		for(var i = countertwo; i < counter; i++) {
 			foodArray.push(action.food.body.response.groups[0].items[i]);
 		}
 		console.log('foodArray', foodArray);
-		let state = Object.assign({}, state, {
-			food: foodArray
+		// let state = Object.assign({}, state, {
+		// 	food: action.food.body.response.groups[0].items,
+		// 	subFood: foodArray
+		// });
+		state = update(state, {
+			food: {$set: action.food.body.response.groups[0].items},
+			subFood: {$set: foodArray}
 		});
 		console.log('fetch food success - category search', state);
 		return state;
@@ -55,7 +72,7 @@ const reducer = (state, action) => {
 		}
 	}
 	//MUSIC
-	else if (action.type == actions.FETCH_MUSIC_SUCCESS) {
+	else if (action.type === actions.FETCH_MUSIC_SUCCESS) {
 		
 		let state = Object.assign({}, state, {
 			music: action.music.body.response.groups[0].items
@@ -69,13 +86,13 @@ const reducer = (state, action) => {
 		}
 	}
 	//NIGHTLIFE
-	else if (action.type == actions.FETCH_NIGHTLIFE_SUCCESS) {
+	else if (action.type === actions.FETCH_NIGHTLIFE_SUCCESS) {
 		
-		let state = Object.assign({}, state, {
+		let newstate = Object.assign({}, state, {
 			nightLife: action.nightLife.body.response.groups[0].items
 		});
 		console.log('fetch nightlife success - category search', state);
-		return state;
+		return newstate;
 	}
 	else if(action.type === actions.FETCH_NIGHTLIFE_ERROR) {
 		return {
@@ -83,13 +100,13 @@ const reducer = (state, action) => {
 		}
 	}
 	//OUTDOOR
-	else if (action.type == actions.FETCH_OUTDOOR_SUCCESS) {
+	else if (action.type === actions.FETCH_OUTDOOR_SUCCESS) {
 		
-		let state = Object.assign({}, state, {
+		let newstate = Object.assign({}, state, {
 			outdoor: action.outdoor.body.response.groups[0].items
 		});
 		console.log('fetch outdoor success - category search', state);
-		return state;
+		return newstate;
 	}
 	else if(action.type === actions.FETCH_OUTDOOR_ERROR) {
 		return {

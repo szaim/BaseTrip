@@ -10,8 +10,8 @@ const Food = React.createClass({
 	// 	this.props.dispatch(actions.fetchFood('40.7,-74'));
 	// },
 	onNext: function() {
+		// this.props.dispatch(actions.fetchFood('40.7,-74'));
 		this.props.dispatch(actions.nextFood());
-		this.props.dispatch(actions.fetchFood('40.7,-74'));
 		console.log("clicked");
 	},
 

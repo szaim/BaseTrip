@@ -7,9 +7,9 @@ const actions = require('../../redux/action');
 
 const NightLife = React.createClass({
 
-	componentWillMount: function() {
-		this.props.dispatch(actions.fetchNightLife('40.7,-74'));
-	},
+	// componentWillMount: function() {
+	// 	this.props.dispatch(actions.fetchNightLife('40.7,-74'));
+	// },
 
 	render: function() {
 		let nightLifeList = this.props.nightLife.map((event,index) => {
