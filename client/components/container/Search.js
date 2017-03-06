@@ -20,7 +20,7 @@ searchItem: function(event){
 				<form onSubmit={this.searchItem}>
 					<input type='text' ref='location' placeholder='location' required />
 					<input type='text' ref='exploreItem' placeholder='search category' required />
-					<button type='submit'>Submit</button>
+					<button className='btn btn-primary' type='submit'>Submit</button>
 				</form>
 			</div>
 			)

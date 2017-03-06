@@ -36,20 +36,13 @@ const Food = React.createClass({
 			)
 		});
 		return (
-				<div className="Container">
-					<h1>Food & Drink</h1>
-						<div className="row">
-							<div className="slider responsive">
-								{foodList}
-							</div>
-						</div>
-						<div className="prev">
-							<span className="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-						</div>
-						<div className="next">
-							<span className="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-						</div>
-				</div>
+
+	
+		<div className='row'>
+			<h1>Food & Drink</h1>
+				{foodList}
+		</div>
+
 		)
 	}
 });

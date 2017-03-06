@@ -5,7 +5,6 @@ const Provider = require('react-redux').Provider;
 const Search = require('./components/container/Search');
 const Category = require('./components/container/Category');
 const Home = require('./components/home');
-require('./CSS/styles.css');
 
 
 const App = React.createClass({
