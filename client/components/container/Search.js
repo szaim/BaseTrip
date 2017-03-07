@@ -16,11 +16,17 @@ searchItem: function(event){
 
 	render: function() {
 		return (
-			<div>
-				<form onSubmit={this.searchItem}>
-					<input type='text' ref='location' placeholder='location' required />
-					<input type='text' ref='exploreItem' placeholder='search category' required />
-					<button className='btn btn-primary' type='submit'>Submit</button>
+			<div className="search-container">
+				<form className="row" onSubmit={this.searchItem}>
+					<div className="row col-xs-6 input-wrapper">
+					<label className="col-xs-12 search-label-right">Where</label>
+						<input className="search-input-right" type='text' ref='location' placeholder='Destination, city' required />
+					</div>
+					<div className="col-xs-4 left-input-wrapper">
+						<label className="col-xs-12 search-label-left">Category</label>
+						<input className="search-input-left" type='text' ref='exploreItem' placeholder='Search category' required />
+						<button className='btn btn-primary btn-lg search-button' type='submit'>Search</button>
+					</div>
 				</form>
 			</div>
 			)

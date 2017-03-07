@@ -3,6 +3,7 @@ const React = require('react');
 const connect = require('react-redux').connect;
 const actions = require('../redux/action');
 const Header = require('./header');
+const Search = require('./container/Search');
 
 
 
@@ -23,6 +24,7 @@ const Home = React.createClass({
 						<span className="textHeader">Looking for places to go?</span> Find interesting stuff happenning in your area.
 					</p>
 				</div>
+				<Search />
 				<Categories />
 			</div>
 		</div>
