@@ -128,3 +128,44 @@
     border: #f6a623;
 }
 
+/***************** Card Events *****************/
+
+.event-img {
+	height: 25em;
+	width: 16em;
+}
+svg {
+	fill: rgb(118, 118, 118);
+    height: 24px;
+    width: 24px;
+}
+
+.nextArrow-button {
+    cursor: pointer !important;
+    background-color: transparent !important;
+    color: buttontext !important;
+    border: 0px !important;
+    display: block !important;
+    float: right;
+    z-index: 1;
+    position: absolute;
+    right: 150px;
+    top: 46em;
+}
+
+.category-title {
+	/* Food & Drink: */
+    font-family: Arial;
+    font-size: 24px;
+    color: #4A4A4A;
+    letter-spacing: -0.87px;
+    margin-bottom: 20px;
+}
+
+.event-title {
+	/* Flashmob & burning m: */
+    font-size: 18px;
+    color: rgba(72, 72, 72, 0.8);
+    letter-spacing: -0.87px;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
+}

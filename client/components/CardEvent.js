@@ -5,9 +5,9 @@ const React = require('react');
 const CardEvent = function(props) {
 	var link = '300x500';
 	return (
-		<div className="col-lg-3">
-			<img  src={`${props.prefix}300x500${props.suffix}`} />
-			<h3>{props.title}</h3>
+		<div className="col-xs-3" style={{'padding-left': 0}}>
+			<img className="event-img" src={`${props.prefix}300x500${props.suffix}`} />
+			<span className='event-title'>{props.title}</span><br />
 			<span>{props.rating}</span>
 		</div>
 
