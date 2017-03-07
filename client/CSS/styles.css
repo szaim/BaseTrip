@@ -146,11 +146,11 @@ svg {
     color: buttontext !important;
     border: 0px !important;
     display: block !important;
-    float: right;
+  /*  float: right;
     z-index: 1;
     position: absolute;
     right: 150px;
-    top: 46em;
+    top: 46em;*/
 }
 
 .category-title {
@@ -169,3 +169,65 @@ svg {
     letter-spacing: -0.87px;
     font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
 }
+
+.category-wrapper {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+
+
+
+/*********Media Queries**********/
+
+
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+    body{ 
+        border: 5px solid blue;
+     }
+    .event-img {
+        height: 21em;
+        width: 12em;
+    }
+    .event-title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 800px) {
+    body{ 
+        border: 5px solid red;
+     }
+    .category-wrapper {
+        display: block;
+    }
+    .event-img {
+        height: 15em;
+        width: 10em;
+    }
+
+    .category-title {
+        font-size: 18px;
+    }
+
+    .event-title {
+        font-size: 14px;
+    }
+
+/*    .nextArrow-button {
+    float: right;
+    z-index: 1;
+    position: absolute;
+    right: 150px;
+    top: 46em;
+    }*/
+}
+
+
+
+
+
+
+
+
