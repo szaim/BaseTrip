@@ -1,6 +1,7 @@
 const express = require("express");
 const request = require("request");
 const unirest = require("unirest");
+const NodeGeocoder = require('node-geocoder');
 
 
 const app = express();
@@ -15,11 +16,12 @@ let url = "https://api.foursquare.com/v2/venues/explore";
 let clientID = "EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0";
 // CLIENT_SECRET
 let clientSecret = "FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE";
-let location = '40.7,-74';
+// let location = '40.7,-74';
 let date = formatted_date();
+let latLong;
 // let limit = '&limit=16';
 
-https://api.foursquare.com/v2/venues/4471bf9af964a5209c331fe3/photos?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE
+// https://api.foursquare.com/v2/venues/4471bf9af964a5209c331fe3/photos?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE
 
 console.log(date);
 
@@ -42,7 +44,8 @@ console.log(date);
 
 //categories
 
-https://api.foursquare.com/v2/events/categories?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE&query=food,outdoor&ll=40.7,-74&v=20170227
+// https://api.foursquare.com/v2/events/categories?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE&query=food,outdoor&ll=40.7,-74&v=20170227
+
 
 function formatted_date()
 {
@@ -73,12 +76,29 @@ app.get('/venue/search/:search', function(req, res) {
 });
 
 
+
+
 app.get('/venue/explore/:explore/:location', function(req, res) {
 	let query = req.params.explore;
    let location = req.params.location;
-   // let url = 'https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + location + '&query=' + query + '&v=' + date + '&venuePhotos=1';
-   // console.log(url);
-	unirest.get('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + location + '&query=' + query + '&v=' + date + '&venuePhotos=1')
+  
+   var geocoderProvider = 'google';
+   var httpAdapter = 'https';
+   // optionnal
+   var extra = {
+      apiKey: 'AIzaSyCwg5Nu1Ti8BHSJWbijp_ATUTKS_jfFJyc', // for map quest
+      formatter: null         // 'gpx', 'string', ...
+   };
+
+   var geocoder = NodeGeocoder(geocoderProvider, httpAdapter, extra);
+   geocoder.geocode(location, function(err, res) {
+     console.log('location', res);
+     latLong = Math.round(res[0].latitude) + ',' + Math.round(res[0].longitude);
+     console.log('latlong', latLong);
+     
+   });
+   
+	unirest.get('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + latLong + '&query=' + query + '&v=' + date + '&venuePhotos=1')
 	.end(function(data){
 		return res.send(data);
 	});

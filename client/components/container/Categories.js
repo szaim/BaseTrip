@@ -5,7 +5,7 @@ const actions = require('../../redux/action');
 const Food = require('./Food');
 const NightLife = require('./NightLife');
 const Outdoor = require('./Outdoor');
-
+const Category = require('./Category');
 
 
 const Categories = React.createClass({
