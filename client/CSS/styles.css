@@ -176,7 +176,29 @@ svg {
     align-self: center;
 }
 
+/****Animation*******/
 
+
+.card-animation {
+    /*animation: imageAnimation 50s linear infinite; */
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  30% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+/*  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }*/
+}
 
 
 /*********Media Queries**********/

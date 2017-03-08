@@ -2,6 +2,7 @@ const React = require('react');
 const CardEvent = require('../cardEvent');
 const connect = require('react-redux').connect;
 const actions = require('../../redux/action');
+const $ = require('jquery');
 
 
 const Food = React.createClass({
@@ -9,11 +10,22 @@ const Food = React.createClass({
 	// componentWillMount: function() {
 	// 	this.props.dispatch(actions.fetchFood('40.7,-74'));
 	// },
-	onNext: function() {
+	onNext: function(e) {
 		// this.props.dispatch(actions.fetchFood('40.7,-74'));
 		this.props.dispatch(actions.nextFood());
-		console.log("clicked");
-	},
+		console.log("clicked")
+			e.preventDefault();
+			console.log('jquery working');
+			console.log('this', this);
+			// $('#food-button').siblings('.card-animation').toggleClass('animation');
+
+			
+			$('#food-button').siblings('.card-animation').animate({right: "1200px"}, "slow", function () {
+			$('#food-button').siblings('.card-animation').toggle().css('animation', 'imageAnimation 3s linear 1');
+        	$('#food-button').siblings('.card-animation').css('right', '0');
+
+    });
+		},
 
 	render: function() {
 	    let settings = {
@@ -47,9 +59,9 @@ const Food = React.createClass({
 			<h3 className='category-title'>Food & Drink</h3>
 			<div className='category-wrapper'>
 				{foodList}
-			<button className="nextArrow-button" type='button' onClick={this.onNext}>
+			<button className="nextArrow-button" id='food-button' type='button' onClick={this.onNext}>
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-				<path fill-rule="evenodd" d="M4.293 1.707A1 1 0 1 1 5.708.293l7.995 8a1 1 0 0 1 0 1.414l-7.995 8a1 1 0 1 1-1.415-1.414L11.583 9l-7.29-7.293z">
+				<path fillRule="evenodd" d="M4.293 1.707A1 1 0 1 1 5.708.293l7.995 8a1 1 0 0 1 0 1.414l-7.995 8a1 1 0 1 1-1.415-1.414L11.583 9l-7.29-7.293z">
 				</path></svg>
 			</button>
 			</div>

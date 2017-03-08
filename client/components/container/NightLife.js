@@ -13,6 +13,7 @@ const NightLife = React.createClass({
 	onNext: function() {
 		this.props.dispatch(actions.nextNightLife());
 		console.log("clicked");
+		$('#nightLife-button').siblings('.card-animation').toggleClass('animation');
 	},
 
 	render: function() {
@@ -42,9 +43,9 @@ const NightLife = React.createClass({
 					<h3 className='category-title'>Night Life</h3>
 					<div className='category-wrapper'>
 						{nightLifeList}
-						<button className="nextArrow-button" type='button' onClick={this.onNext}>
+						<button className="nextArrow-button" id='nightLife-button' type='button' onClick={this.onNext}>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-								<path fill-rule="evenodd" d="M4.293 1.707A1 1 0 1 1 5.708.293l7.995 8a1 1 0 0 1 0 1.414l-7.995 8a1 1 0 1 1-1.415-1.414L11.583 9l-7.29-7.293z">
+								<path fillRule="evenodd" d="M4.293 1.707A1 1 0 1 1 5.708.293l7.995 8a1 1 0 0 1 0 1.414l-7.995 8a1 1 0 1 1-1.415-1.414L11.583 9l-7.29-7.293z">
 								</path>
 							</svg>
 						</button>
