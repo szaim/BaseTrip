@@ -13,6 +13,8 @@ const Outdoor = React.createClass({
 	onNext: function() {
 		this.props.dispatch(actions.nextOutdoor());
 		console.log("clicked");
+		$('#outdoor-button').siblings('.card-animation').toggle().css('animation', 'imageAnimationFadeOut 5s cubic-bezier(1,-0.3, 0, 1.33) 1');
+		$('#outdoor-button').siblings('.card-animation').toggle().css('animation', 'imageAnimationFadeIn 5s cubic-bezier(1,-0.3, 0, 1.33) 1');
 	},
 
 	render: function() {

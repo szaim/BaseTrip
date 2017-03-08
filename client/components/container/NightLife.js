@@ -13,7 +13,8 @@ const NightLife = React.createClass({
 	onNext: function() {
 		this.props.dispatch(actions.nextNightLife());
 		console.log("clicked");
-		$('#nightLife-button').siblings('.card-animation').toggleClass('animation');
+		$('#nightLife-button').siblings('.card-animation').toggle().css('animation', 'imageAnimationFadeOut 5s cubic-bezier(1,-0.3, 0, 1.33) 1');
+		$('#nightLife-button').siblings('.card-animation').toggle().css('animation', 'imageAnimationFadeIn 5s cubic-bezier(1,-0.3, 0, 1.33) 1');
 	},
 
 	render: function() {

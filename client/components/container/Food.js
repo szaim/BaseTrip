@@ -10,21 +10,13 @@ const Food = React.createClass({
 	// componentWillMount: function() {
 	// 	this.props.dispatch(actions.fetchFood('40.7,-74'));
 	// },
-	onNext: function(e) {
+	onNext: function() {
 		// this.props.dispatch(actions.fetchFood('40.7,-74'));
 		this.props.dispatch(actions.nextFood());
 		console.log("clicked")
-			e.preventDefault();
-			console.log('jquery working');
-			console.log('this', this);
-			// $('#food-button').siblings('.card-animation').toggleClass('animation');
-
-			
-			$('#food-button').siblings('.card-animation').animate({right: "1200px"}, "slow", function () {
-			$('#food-button').siblings('.card-animation').toggle().css('animation', 'imageAnimation 3s linear 1');
-        	$('#food-button').siblings('.card-animation').css('right', '0');
-
-    });
+		$('#food-button').siblings('.card-animation').toggle().css('animation', 'imageAnimationFadeOut 5s cubic-bezier(1,-0.3, 0, 1.33) 1');
+		$('#food-button').siblings('.card-animation').toggle().css('animation', 'imageAnimationFadeIn 5s cubic-bezier(1,-0.3, 0, 1.33) 1');
+ 
 		},
 
 	render: function() {

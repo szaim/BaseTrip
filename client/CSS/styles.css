@@ -178,28 +178,43 @@ svg {
 
 /****Animation*******/
 
-
-.card-animation {
-    /*animation: imageAnimation 50s linear infinite; */
+body {
+    animation: imageAnimationFadeInBody 10s cubic-bezier(1,-0.3, 0, 1.33) 1;
 }
 
-@keyframes imageAnimation { 
+@keyframes imageAnimationFadeInBody { 
   0% { 
     opacity: 0; 
     animation-timing-function: ease-in;
   }
-  30% {
+  55% {
     opacity: 1;
     animation-timing-function: ease-out;
   }
-/*  20% {
-    opacity: 1
-  }
-  30% {
-    opacity: 0
-  }*/
 }
 
+
+@keyframes imageAnimationFadeIn { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  50% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes imageAnimationFadeOut { 
+  0% { 
+    opacity: 1; 
+    animation-timing-function: ease-out;
+  }
+  50% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+}
 
 /*********Media Queries**********/
 
