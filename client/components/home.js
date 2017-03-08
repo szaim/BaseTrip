@@ -10,9 +10,20 @@ const Search = require('./container/Search');
 const Home = React.createClass({
 
 	componentWillMount: function() {
-		this.props.dispatch(actions.fetchFood('40.7,-74'));
-		this.props.dispatch(actions.fetchNightLife('40.7,-74'));
-		this.props.dispatch(actions.fetchOutdoor('40.7,-74'));
+		function getLocation() {
+    		if (navigator.geolocation) {
+        		navigator.geolocation.getCurrentPosition(showPosition);
+    		} else { 
+        	x.innerHTML = "Geolocation is not supported by this browser.";
+    		}
+		};
+		function showPosition(position) {
+			console.log('location', Math.round(position.coords.latitude) + ',' + Math.round(position.coords.longitude));
+   			 return Math.round(position.coords.latitude) + ',' + Math.round(position.coords.longitude);
+		};
+		this.props.dispatch(actions.fetchFood(getLocation()));
+		this.props.dispatch(actions.fetchNightLife(getLocation()));
+		this.props.dispatch(actions.fetchOutdoor(getLocation()));
 	},
 	render: function() {
 		return (
