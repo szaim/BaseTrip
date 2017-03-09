@@ -101,6 +101,18 @@ app.get('/venue/explore/:explore/:location', function(req, res) {
 });
 
 
+app.get('/venue/current/:explore/:location', function(req, res) {
+   let query = req.params.explore;
+   let location = req.params.location;
+
+   console.log('location for homepage', location)
+
+   unirest.get('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + location + '&query=' + query + '&v=' + date + '&venuePhotos=1')
+   .end(function(data){
+      return res.send(data);
+   });
+});
+
 
 
 

@@ -129,7 +129,7 @@ export const fetchExplore = (searchTerm, location) => {
 
 export const fetchFood = (location) => {
  return function(dispatch) {
-    let url = '/venue/explore/food/' + location;
+    let url = '/venue/current/food/' + location;
     return fetch(url).then(function(response) {
      if (response.status < 200 || response.status >= 300) {
        let error = new Error(response.statusText);
@@ -153,35 +153,9 @@ export const fetchFood = (location) => {
   };
 };
 
-export const fetchMusic = (location) => {
- return function(dispatch) {
-    let url = '/venue/explore/music/' + location;
-    return fetch(url).then(function(response) {
-     if (response.status < 200 || response.status >= 300) {
-       let error = new Error(response.statusText);
-       error.response = response;
-       throw error;
-     }
-     return response.json();
-   })
-
-    .then((data) => {
-     console.log("fetch MUSIC promise: ", data);
-     return dispatch(
-       fetchMusicSuccess(data)
-       );
-   })
-    .catch((error) => {
-     return dispatch(
-       fetchMusicError(error)
-       );
-   });
-  };
-};
-
 export const fetchNightLife = (location) => {
  return function(dispatch) {
-    let url = '/venue/explore/night&life/' + location;
+    let url = '/venue/current/night&life/' + location;
     return fetch(url).then(function(response) {
      if (response.status < 200 || response.status >= 300) {
        let error = new Error(response.statusText);
@@ -207,7 +181,7 @@ export const fetchNightLife = (location) => {
 
 export const fetchOutdoor = (location) => {
  return function(dispatch) {
-    let url = '/venue/explore/outdoor/' + location;
+    let url = '/venue/current/outdoor/' + location;
     return fetch(url).then(function(response) {
      if (response.status < 200 || response.status >= 300) {
        let error = new Error(response.statusText);

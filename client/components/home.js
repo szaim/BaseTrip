@@ -5,25 +5,28 @@ const actions = require('../redux/action');
 const Header = require('./header');
 const Search = require('./container/Search');
 
+let location;
+
+
 
 
 const Home = React.createClass({
 
 	componentWillMount: function() {
-		function getLocation() {
-    		if (navigator.geolocation) {
-        		navigator.geolocation.getCurrentPosition(showPosition);
-    		} else { 
-        	x.innerHTML = "Geolocation is not supported by this browser.";
-    		}
-		};
-		function showPosition(position) {
-			console.log('location', Math.round(position.coords.latitude) + ',' + Math.round(position.coords.longitude));
-   			 return Math.round(position.coords.latitude) + ',' + Math.round(position.coords.longitude);
-		};
-		this.props.dispatch(actions.fetchFood(getLocation()));
-		this.props.dispatch(actions.fetchNightLife(getLocation()));
-		this.props.dispatch(actions.fetchOutdoor(getLocation()));
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition((position) => {
+					location = Math.round(position.coords.latitude) + ',' + Math.round(position.coords.longitude);
+					console.log('location from geo before', location);
+							this.props.dispatch(actions.fetchFood(location));
+							this.props.dispatch(actions.fetchNightLife(location));
+							this.props.dispatch(actions.fetchOutdoor(location));
+				});
+			} else { 
+			x.innerHTML = "Geolocation is not supported by this browser.";
+			}
+
+		console.log('location from geo', location);
+
 	},
 	render: function() {
 		return (
