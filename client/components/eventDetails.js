@@ -7,7 +7,9 @@ const SearchHeader = require('./container/SearchHeader');
 
 
 
-const EventDetails = function(props) {
+const EventDetails = React.createClass({
+
+	render: function() {
 	
 	return (
 		<div>
@@ -18,4 +20,12 @@ const EventDetails = function(props) {
 };
 
 
-module.exports = EventDetails;
+var mapStateToProps = function(state, props) {
+	return {
+		cards: state.categorySearch
+	}
+};
+
+const Container = connect()(EventDetails);
+
+module.exports = Container;
