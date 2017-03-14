@@ -9,7 +9,9 @@ const actions = require('../../redux/action');
 
 
 
-const EventDetails = function(props) {
+const EventDetails = React.createClass({
+
+	render: function() {
 	
 	return (
 		<div>
@@ -17,7 +19,17 @@ const EventDetails = function(props) {
 		</div>
 
 	)
+}
+
+});
+
+
+var mapStateToProps = function(state, props) {
+	return {
+		cards: state.categorySearch
+	}
 };
 
+const Container = connect()(EventDetails);
 
-module.exports = EventDetails;
+module.exports = Container;
