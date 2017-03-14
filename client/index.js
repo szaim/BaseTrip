@@ -4,13 +4,14 @@ const store = require('./redux/store');
 const Provider = require('react-redux').Provider;
 const Category = require('./components/container/Category');
 const Home = require('./components/home');
+const EventDetails = require('./components/eventDetails');
 require('./CSS/styles.css');
 
 const App = React.createClass({
    render: function() {
         return (
             <div>
-                <Home />
+                <EventDetails />
 
             </div>
         );
