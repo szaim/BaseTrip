@@ -16,6 +16,9 @@ const EventDetails = React.createClass({
 	return (
 		<div>
 			<SearchHeader />
+			<Info />
+			<Review />
+			<MapLocation />
 		</div>
 
 	)
@@ -26,7 +29,7 @@ const EventDetails = React.createClass({
 
 var mapStateToProps = function(state, props) {
 	return {
-		event: state.selectedEvent;
+		event: state.selectedEvent
 	}
 };
 
