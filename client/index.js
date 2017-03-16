@@ -6,25 +6,24 @@ const Category = require('./components/container/Category');
 const Home = require('./components/home');
 const EventDetails = require('./components/container/eventDetails');
 require('./CSS/styles.css');
+const routes = require('./routes/routes');
 
-const App = React.createClass({
-   render: function() {
-        return (
-            <div>
-                <EventDetails />
-            </div>
-        );
-   }
+// const App = React.createClass({
+//    render: function() {
+//         return (
+//             <div>
+//                 <EventDetails />
+//             </div>
+//         );
+//    }
 
-});
+// });
 
 
 
 
 document.addEventListener('DOMContentLoaded', function() {
     ReactDOM.render(
-    <Provider store={store}>
-    	<App />
-    </Provider>,
+    	routes,
     	document.getElementById('app'));
 });

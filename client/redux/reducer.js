@@ -10,7 +10,8 @@ let initialState = {
 	nightLife: [],
 	subNightLife: [],
 	outdoor: [],
-	subOutdoor: []
+	subOutdoor: [],
+	selectedEvent: []
 };
 
 let foodArray = [];
@@ -141,6 +142,14 @@ const reducer = (state, action) => {
 		return {
 			error: action.error
 		}
+	}
+	// Selected Event
+	else if(action.type === actions.SELECT_EVENT) {
+		state = update(state, {
+			selectedEvent: {$set: action.data}
+		});
+		console.log('selectd event', state);
+		return state;
 	}
 
 	return state;

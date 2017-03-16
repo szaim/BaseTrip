@@ -1,5 +1,5 @@
 const React = require('react');
-const CardEvent = require('../cardEvent');
+const CardEvent = require('./CardEvent');
 const connect = require('react-redux').connect;
 const actions = require('../../redux/action');
 
@@ -37,7 +37,8 @@ const Outdoor = React.createClass({
 				prefix={prefix} 
 				suffix={suffix}
 				title={event.venue.name}
-				rating={event.venue.rating}/>
+				rating={event.venue.rating}
+				data={event} />
 			)
 		});
 

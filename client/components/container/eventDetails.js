@@ -26,7 +26,7 @@ const EventDetails = React.createClass({
 
 var mapStateToProps = function(state, props) {
 	return {
-		cards: state.categorySearch
+		event: state.selectedEvent;
 	}
 };
 

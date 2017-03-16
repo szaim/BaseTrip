@@ -17,9 +17,7 @@ searchItem: function(event){
 		return (
 			<div className=''>
 				<header className="">
-
                         	<a className="brandName" href="#">BaseTrip</a>
-
 							<form className="row" onSubmit={this.searchItem}>
 								<div className="col-xs-4 left-input-wrapper">
 									<input className="search-input-left" type='text' ref='exploreItem' placeholder='Search category' required />

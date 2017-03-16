@@ -101,6 +101,14 @@ export const nextOutdoor = function() {
   }
 }
 
+export const SELECT_EVENT = 'SELECT_EVENT';
+export const selectEvent = function(data) {
+  return {
+    type: SELECT_EVENT,
+    data: data
+  }
+}
+
 export const fetchExplore = (searchTerm, location) => {
  return function(dispatch) {
     let url = '/venue/explore/'+ searchTerm + '/' + location;

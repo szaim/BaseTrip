@@ -1,5 +1,5 @@
 const React = require('react');
-const CardEvent = require('../cardEvent');
+const CardEvent = require('./CardEvent');
 const connect = require('react-redux').connect;
 const actions = require('../../redux/action');
 const $ = require('jquery');
@@ -24,6 +24,7 @@ const Food = React.createClass({
 			  slideRatio: 4,
 			  slidePending: true
 	    };
+	    console.log('food info to pass!!', this.props.subFood);
 		let foodList = this.props.subFood.map((event,index) => {
 			let prefix;
 			let suffix;
@@ -42,7 +43,8 @@ const Food = React.createClass({
 				prefix={prefix} 
 				suffix={suffix}
 				title={event.venue.name}
-				rating={event.venue.rating}/>
+				rating={event.venue.rating}
+				data={event} />
 			)
 		});
 		return (
