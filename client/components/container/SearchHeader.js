@@ -15,7 +15,7 @@ searchItem: function(event){
 
 	render: function() {
 		return (
-			<div class=''>
+			<div className=''>
 				<header className="">
 
                         	<a className="brandName" href="#">BaseTrip</a>

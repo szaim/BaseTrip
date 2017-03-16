@@ -33,6 +33,7 @@ const Outdoor = React.createClass({
 			return (
 				<CardEvent 
 				key={index}
+				id={index}
 				prefix={prefix} 
 				suffix={suffix}
 				title={event.venue.name}
