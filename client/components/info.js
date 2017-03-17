@@ -6,16 +6,18 @@ const Info = function(props) {
 	return (
 		<div>
 			<div>
-				<h1>Title</h1>
-				<span>Location/City</span>
+				<h1>{props.name}</h1>
+				<span>{props.location}</span>
 				<br/>
 				<div>
 					<span>About Place</span>
-					<p>Text</p>
+					<p>{props.tips}</p>
 				</div>
+
 			</div>
 			<div>
-				<img src=''/>
+				<img src={`${props.prefix}300x500${props.suffix}`} />
+				<span>{props.rating}</span>
 			</div>
 		</div>
 	)

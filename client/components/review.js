@@ -6,9 +6,8 @@ const Review = function(props) {
 	return (
 		<div>
 			<span>Reviews</span>
-			<span>Name</span>
-			<span>Location</span>
-			<p>Review notes</p>
+			<span>{props.reasonName}</span>
+			<p>{props.summary}</p>
 		</div>
 
 	)
