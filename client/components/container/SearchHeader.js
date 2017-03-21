@@ -16,14 +16,19 @@ searchItem: function(event){
 	render: function() {
 		return (
 			<div className=''>
-				<header className="">
-                        	<a className="brandName" href="#">BaseTrip</a>
-							<form className="row" onSubmit={this.searchItem}>
-								<div className="col-xs-4 left-input-wrapper">
-									<input className="search-input-left" type='text' ref='exploreItem' placeholder='Search category' required />
-									<button className='btn btn-primary btn-lg search-button' type='submit'>Search</button>
-								</div>
-							</form>
+				<header className="header search-detailPage">
+						<div>
+                    	<a className="brandName" href="#">BaseTrip</a>
+                    	</div>
+                    	<div>
+						<form  onSubmit={this.searchItem}>
+							<div className='search-wrapper'>
+								<input  className='search-input' type='text' ref='location' placeholder='Destination, city' required />
+								<input  className='search-input' type='text' ref='exploreItem' placeholder='Search category' required />
+								<button className='btn btn-primary btn-md search-button-detail' type='submit'>Search</button>
+							</div>
+						</form>
+						</div>
                 </header>
 			</div>
 			)

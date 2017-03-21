@@ -178,11 +178,80 @@ svg {
 }
 
 
-/**** Event Details Page *******/
+/************************** EVENT-DETAILS PAGE **************************/
 
+.search-detailPage {
+    display: flex;
+    justify-content: space-between;
+}
 
+.search-wrapper {
+    padding-top: 10px;
+    margin-right: 10px;
+}
 
+.search-input {
+    margin-right: 10px;
+    padding-right: 10px;
+}
 
+.search-button-detail {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.eventDetail-container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.event-info {
+    padding-top: 0px;
+}
+
+.tips-content {
+    border-top: 1px solid gray;
+    padding-top: 30px;
+    margin-top: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.eventDetail-rating {
+    margin: auto;
+}
+
+.review-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.anonymous-icon {
+    width: 50px;
+    height: 50px;
+    background: red;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.review-text {
+    margin-top: 12px;
+    margin-left: 25px;
+}
 
 
 
