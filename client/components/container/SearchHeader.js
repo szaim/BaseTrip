@@ -15,12 +15,12 @@ searchItem: function(event){
 
 	render: function() {
 		return (
-			<div className=''>
+			<div>
 				<header className="header search-detailPage">
 						<div>
-                    	<a className="brandName" href="#">BaseTrip</a>
+                    	<a className="brandName brandName-eventDetail" href="#">BaseTrip</a>
                     	</div>
-                    	<div>
+                    	<div className='search-form-container'>
 						<form  onSubmit={this.searchItem}>
 							<div className='search-wrapper'>
 								<input  className='search-input' type='text' ref='location' placeholder='Destination, city' required />

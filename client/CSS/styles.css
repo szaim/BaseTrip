@@ -180,9 +180,19 @@ svg {
 
 /************************** EVENT-DETAILS PAGE **************************/
 
+
+
 .search-detailPage {
     display: flex;
     justify-content: space-between;
+}
+
+.brandName-eventDetail {
+    margin-left: 110px;
+}
+
+.search-form-container {
+    margin-right: 95px;
 }
 
 .search-wrapper {
@@ -193,6 +203,11 @@ svg {
 .search-input {
     margin-right: 10px;
     padding-right: 10px;
+}
+
+.search-button-detail, .event-button {
+    background: #f6a623;
+    border: #f6a623;
 }
 
 .search-button-detail {
@@ -224,16 +239,20 @@ svg {
     flex-direction: column;
 }
 
+.image-detailPage {
+
+}
+
 .eventDetail-rating {
     margin: auto;
 }
 
-.review-section {
+.content-section {
     display: flex;
     flex-direction: column;
 }
 
-.review-wrapper {
+.content-wrapper {
     display: flex;
     flex-direction: row;
     margin-top: 20px;
@@ -248,9 +267,30 @@ svg {
     border-radius: 50px;
 }
 
-.review-text {
-    margin-top: 12px;
-    margin-left: 25px;
+.info-list {
+    list-style: none;
+}
+
+.line2-address {
+    margin-left: 90px;
+}
+
+.info-list-category {
+    color: #F6A623;
+    font-weight: bold;
+}
+
+#address, #website{
+    margin-right: 15px;
+}
+
+#phone {
+    margin-right: 30px;
+}
+
+.content-text {
+/*    margin-top: 12px;
+    margin-left: 25px;*/
 }
 
 

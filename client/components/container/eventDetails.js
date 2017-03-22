@@ -2,7 +2,6 @@ const React = require('react');
 const Header = require('../header');
 const Info = require('../info');
 const MapLocation = require('../map');
-const Review = require('../review');
 const SearchHeader = require('./SearchHeader');
 const connect = require('react-redux').connect;
 const actions = require('../../redux/action');
@@ -19,17 +18,21 @@ const EventDetails = React.createClass({
 			<div>
 				<Info 
 					name={this.props.event.venue.name}
-					location={this.props.event.venue.location.city}
+					location={this.props.event.venue.location}
 					tips={this.props.event.tips[0].text}
 					prefix={this.props.event.venue.featuredPhotos.items[0].prefix}
 					suffix={this.props.event.venue.featuredPhotos.items[0].suffix}
 					rating={this.props.event.venue.rating}
-					reasonName={this.props.event.reasons.items[0].reasonName}
-					summary={this.props.event.reasons.items[0].summary}/>
+					status={this.props.event.venue.hours.status}
+					url={this.props.event.venue.url}
+					price={this.props.event.venue.price}
+					contact={this.props.event.venue.contact} />
 					<MapLocation
+					location={this.props.event.venue.location}
 					lat={this.props.event.venue.location.lat}
 					long={this.props.event.venue.location.lng} />
 			</div>
+			
 		</div>
 
 	)
