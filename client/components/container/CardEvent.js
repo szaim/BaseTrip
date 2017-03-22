@@ -14,7 +14,7 @@ const CardEvent = React.createClass({
 
 	render: function() {
 	return (
-		<div className="col-xs-6 card-animation" id={this.props.id} style={{'paddingLeft': 0}}>
+		<div className="col-xs-6 col-lg-3 card-animation" id={this.props.id} style={{'paddingLeft': 0}}>
 			<Link to='eventDetails'>
 			<img onClick={this.onSelect} className="event-img" src={`${this.props.prefix}300x500${this.props.suffix}`} />
 			</Link>
