@@ -28,7 +28,7 @@ const Info = function(props) {
 							        <span className='line2-address'>{props.location.formattedAddress[1]}</span></p>
 							</li>
 							<li><p className='content-text'><span id='phone' className='info-list-category'>Phone</span>{props.contact.formattedPhone}</p></li>
-							<li><span id='website' className='info-list-category'>Website</span><a href='{props.url}' className='content-text'>{props.url}</a></li>
+							<li><span id='website' className='info-list-category'>Website</span><a href={props.url} className='content-text' target='_blank'>{props.url}</a></li>
 						</ul>
 					</div>
 				</div>

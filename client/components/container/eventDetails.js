@@ -5,7 +5,7 @@ const MapLocation = require('../map');
 const SearchHeader = require('./SearchHeader');
 const connect = require('react-redux').connect;
 const actions = require('../../redux/action');
-
+const Category = require('./Category')
 
 
 const EventDetails = React.createClass({

@@ -1,6 +1,7 @@
 const React = require('react');
 const connect = require('react-redux').connect;
 const actions = require('../../redux/action');
+import { hashHistory } from 'react-router';
 
 const Search = React.createClass({
 
@@ -11,6 +12,7 @@ searchItem: function(event){
 	console.log('this hit');
 	console.log(item);
 	this.props.dispatch(actions.fetchExplore(item, location));
+	hashHistory.push('/eventList');
 },
 
 

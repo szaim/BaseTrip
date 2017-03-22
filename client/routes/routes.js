@@ -10,6 +10,7 @@ const Link = router.Link;
 const App = require('../components/app');
 const Home = require('../components/home');
 const EventDetails = require('../components/container/eventDetails');
+const EventList = require('../components/EventList');
 
 
 
@@ -21,8 +22,10 @@ const routes = (
     <Router history={hashHistory}>
     	<Route path="/" component={App}>
 	        <IndexRoute component={Home} />
-        <Route path="/eventDetails" component={EventDetails} />
+        	<Route path="/eventDetails" component={EventDetails} />
+        	<Route path="/eventList" component={EventList} />
       </Route>
+
     </Router>
     </Provider>
 );
