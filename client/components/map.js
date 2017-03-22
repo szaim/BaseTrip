@@ -5,7 +5,7 @@ let location;
 
 const MapLocation = function(props) {
 	return (
-		<div>
+		<div className='map-container'>
             <iframe
                 allowFullScreen
                 className="left-column" 

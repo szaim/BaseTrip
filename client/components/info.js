@@ -1,8 +1,15 @@
 const React = require('react');
 
 
-
 const Info = function(props) {
+	let style = {
+		height: 500,
+		width: 300,
+		backgroundSize: 'cover',
+
+		backgroundImage: `url(${props.prefix}300x500${props.suffix})`
+	};
+
 	return (
 		<div className='row eventDetail-container'>
 			<div className='col-xs-9 event-info'>
@@ -18,7 +25,7 @@ const Info = function(props) {
 					<div className='col-xs-10 content-wrapper'>
 						<ul className='info-list'>
 							<li><p className='content-text'><span id='address' className='info-list-category'>Address</span>{props.location.formattedAddress[0]} <br/>
-							        <p className='line2-address'>{props.location.formattedAddress[1]}</p></p>
+							        <span className='line2-address'>{props.location.formattedAddress[1]}</span></p>
 							</li>
 							<li><p className='content-text'><span id='phone' className='info-list-category'>Phone</span>{props.contact.formattedPhone}</p></li>
 							<li><span id='website' className='info-list-category'>Website</span><a href='{props.url}' className='content-text'>{props.url}</a></li>
@@ -27,7 +34,8 @@ const Info = function(props) {
 				</div>
 			</div>
 			<div className='image-container'>
-				<img src={`${props.prefix}300x500${props.suffix}`} />
+				<div style={style} >
+				</div>
 				<span className='eventDetail-rating'>{props.rating}</span>
 			</div>
 		</div>

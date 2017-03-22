@@ -272,7 +272,7 @@ svg {
 }
 
 .line2-address {
-    margin-left: 90px;
+    margin-left: 81px;
 }
 
 .info-list-category {
@@ -289,10 +289,17 @@ svg {
 }
 
 .content-text {
-/*    margin-top: 12px;
-    margin-left: 25px;*/
+
 }
 
+.map-container {
+    height: 450px;
+    margin-top: 70px;
+}
+
+.eventDetail-rating {
+    
+}
 
 
 
