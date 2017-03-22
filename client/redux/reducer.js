@@ -69,7 +69,10 @@ const reducer = (state, action) => {
 		
 	}
 	else if (action.type === actions.FETCH_FOOD_SUCCESS) {
-
+		//added condition to prevent food list duplication
+		if (state.subFood.length >= 4) {
+ 			return state;
+ 		} else {
 		for(var i = countertwo; i < counter; i++) {
 			foodArray.push(action.food.body.response.groups[0].items[i]);
 		}
@@ -80,6 +83,7 @@ const reducer = (state, action) => {
 		});
 		console.log('fetch food success - category search', state);
 		return state;
+		}
 	}
 	else if (action.type === actions.FETCH_FOOD_ERROR) {
 		return {
@@ -96,8 +100,10 @@ const reducer = (state, action) => {
 		
 	}
 	else if (action.type === actions.FETCH_NIGHTLIFE_SUCCESS) {
-		
-	
+		//added condition to prevent food list duplication
+		if (state.subFood.length >= 4) {
+ 			return state;
+ 		} else {
 		for(var i = countertwo; i < counter; i++) {
 			nightLifeArray.push(action.nightLife.body.response.groups[0].items[i]);
 		}
@@ -109,7 +115,7 @@ const reducer = (state, action) => {
 		});
 		console.log('fetch nightLife success - category search', state);
 		return state;
-
+		}
 	}
 	else if(action.type === actions.FETCH_NIGHTLIFE_ERROR) {
 		return {
@@ -126,6 +132,10 @@ const reducer = (state, action) => {
 		
 	}
 	else if (action.type === actions.FETCH_OUTDOOR_SUCCESS) {
+		//added condition to prevent food list duplication
+		if (state.subFood.length >= 4) {
+ 			return state;
+ 		} else {
 		for(var i = countertwo; i < counter; i++) {
 			outdoorArray.push(action.outdoor.body.response.groups[0].items[i]);
 		}
@@ -137,6 +147,7 @@ const reducer = (state, action) => {
 		});
 		console.log('fetch outDoor success - category search', state);
 		return state;
+		}
 	}
 	else if(action.type === actions.FETCH_OUTDOOR_ERROR) {
 		return {
