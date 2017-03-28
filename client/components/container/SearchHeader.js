@@ -19,7 +19,7 @@ searchItem: function(event){
 
 	render: function() {
 		return (
-			<div>
+			<div id='navBar'>
 				<header className="header search-detailPage">
 						<div>
                     		<a href='http://localhost:8080/' className="brandName brandName-eventDetail" >BaseTrip</a>

@@ -8,6 +8,7 @@ const actions = require('../../redux/action');
 const CardEvent = React.createClass({
 
 	onSelect: function() {
+		console.log('onSelect hit');
 		let selectedData =  this.props.data;
 		console.log('selectedData from CardEvent Comp', selectedData);
 		this.props.dispatch(actions.selectEvent(selectedData));
@@ -16,7 +17,6 @@ const CardEvent = React.createClass({
 	render: function() {
 	let style = {
 		backgroundImage: `url(${this.props.prefix}300x500${this.props.suffix})`
-		
 	};
 
 	return (

@@ -188,6 +188,13 @@ svg {
 
 
 
+#navBar {
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%;
+    z-index: 100;
+}
+
 .search-detailPage {
     display: flex;
     justify-content: space-between;
@@ -222,7 +229,7 @@ svg {
 }
 
 .eventDetail-container {
-    margin-top: 50px;
+    margin-top: 110px;
     margin-left: 100px;
     margin-right: 100px;
 }
@@ -307,6 +314,13 @@ svg {
 
 }
 
+
+/************************** EVENT SEARCH LIST PAGE **************************/
+
+
+.category-page-container {
+    margin-top: 150px;
+}
 
 
 /****Animation*******/

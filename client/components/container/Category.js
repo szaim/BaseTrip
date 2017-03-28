@@ -13,7 +13,7 @@ const Category = React.createClass({
 			let prefix;
 			let suffix;
 			//if no photos set default image
-			if(!event.venue.photos.groups.length){
+			if(!event.venue.photos.groups.length || !event.venue.photos){
 				prefix = 'https://igx.4sqi.net/img/general/'; 
 				suffix = '/48623284_fqbPs5xy6jImyJu6U2w_xkkR7lilKCVfZEE8qSC66WU.jpg';
 			} else {
@@ -26,11 +26,12 @@ const Category = React.createClass({
 				prefix={prefix} 
 				suffix={suffix}
 				title={event.venue.name}
-				rating={event.venue.rating}/>
+				rating={event.venue.rating}
+				data={event} />
 			)
 		});
 		return (
-			<div className='container'>
+			<div className='container category-page-container'>
 				{cardList}
 			</div>
 
