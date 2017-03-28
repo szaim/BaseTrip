@@ -3,6 +3,7 @@ const router = require('react-router');
 const Link = router.Link;
 const connect = require('react-redux').connect;
 const actions = require('../../redux/action');
+const ratingStar = require('../ratingStar');
 
 
 const CardEvent = React.createClass({
@@ -18,6 +19,7 @@ const CardEvent = React.createClass({
 	let style = {
 		backgroundImage: `url(${this.props.prefix}300x500${this.props.suffix})`
 	};
+	let rating = ((this.props.rating) * 5) / 10; 
 
 	return (
 		<div className="col-xs-6 col-lg-3 card-animation" id={this.props.id} style={{'paddingLeft': 0}}>
@@ -25,7 +27,7 @@ const CardEvent = React.createClass({
 			<div onClick={this.onSelect} className="event-img" style={style}>
 				<div className='event-header-wrapper'>
 					<span className='event-title'>{this.props.title}</span><br />
-					<span>{this.props.rating}</span>
+					<ratingStar rating={rating} />
 				</div>
 			</div>
 			
