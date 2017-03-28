@@ -6,6 +6,7 @@ const actions = require('../../redux/action');
 
 
 const CardEvent = React.createClass({
+
 	onSelect: function() {
 		let selectedData =  this.props.data;
 		console.log('selectedData from CardEvent Comp', selectedData);
@@ -13,15 +14,23 @@ const CardEvent = React.createClass({
 	},
 
 	render: function() {
+	let style = {
+		backgroundImage: `url(${this.props.prefix}300x500${this.props.suffix})`
+		
+	};
+
 	return (
 		<div className="col-xs-6 col-lg-3 card-animation" id={this.props.id} style={{'paddingLeft': 0}}>
 			<Link to='eventDetails'>
-			<img onClick={this.onSelect} className="event-img" src={`${this.props.prefix}300x500${this.props.suffix}`} />
-			</Link>
-			<div>
-				<span className='event-title'>{this.props.title}</span><br />
-				<span>{this.props.rating}</span>
+			<div onClick={this.onSelect} className="event-img" style={style}>
+				<div className='event-header-wrapper'>
+					<span className='event-title'>{this.props.title}</span><br />
+					<span>{this.props.rating}</span>
+				</div>
 			</div>
+			
+			</Link>
+		
 		</div>
 	)
 	}

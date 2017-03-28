@@ -30,7 +30,7 @@ const Category = React.createClass({
 			)
 		});
 		return (
-			<div>
+			<div className='container'>
 				{cardList}
 			</div>
 

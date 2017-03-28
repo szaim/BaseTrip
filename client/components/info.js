@@ -6,7 +6,6 @@ const Info = function(props) {
 		height: 500,
 		width: 300,
 		backgroundSize: 'cover',
-
 		backgroundImage: `url(${props.prefix}300x500${props.suffix})`
 	};
 
