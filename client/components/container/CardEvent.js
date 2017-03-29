@@ -3,7 +3,7 @@ const router = require('react-router');
 const Link = router.Link;
 const connect = require('react-redux').connect;
 const actions = require('../../redux/action');
-const ratingStar = require('../ratingStar');
+import Rating from 'react-rating-system';
 
 
 const CardEvent = React.createClass({
@@ -27,7 +27,7 @@ const CardEvent = React.createClass({
 			<div onClick={this.onSelect} className="event-img" style={style}>
 				<div className='event-header-wrapper'>
 					<span className='event-title'>{this.props.title}</span><br />
-					<ratingStar rating={rating} />
+						<Rating image="http://i68.tinypic.com/14lhug1.png" fillBG="#f1c40f" initialBG="#6a6a6a" numberStars={5} initialValue={rating} editable={false} containerStyle={{ maxWidth: '100px' }}/>
 				</div>
 			</div>
 			

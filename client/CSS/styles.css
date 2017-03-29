@@ -181,11 +181,9 @@ svg {
     padding: 10px;
     color: rgb(250,250,250);
     background-color: rgba(0, 0, 0, 0.4);
+    padding-bottom: 30px;
 }
 
-input {
-    display: none;
-}
 
 
 
@@ -317,6 +315,10 @@ input {
 
 .eventDetail-rating {
 
+}
+
+.image-container > .stars-container {
+    margin-left: 5.5em;
 }
 
 

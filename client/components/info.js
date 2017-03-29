@@ -1,5 +1,5 @@
 const React = require('react');
-
+import Rating from 'react-rating-system';
 
 const Info = function(props) {
 	let style = {
@@ -35,7 +35,8 @@ const Info = function(props) {
 			<div className='image-container'>
 				<div style={style} >
 				</div>
-				<span className='eventDetail-rating'>{props.rating}</span>
+				<Rating image="https://raw.githubusercontent.com/enzoferey/react-rating-system/master/dist/star2.png" fillBG="#f1c40f" initialBG="#6a6a6a" numberStars={5} initialValue={4} editable={false} containerStyle={{ maxWidth: '100px' }}/>
+
 			</div>
 		</div>
 	)
