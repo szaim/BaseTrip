@@ -55,6 +55,9 @@ const Outdoor = React.createClass({
 								</path>
 							</svg>
 						</button>
+						<button className="nextText-button btn btn-primary btn-md" type='button' onClick={this.onNext}>
+							Next
+						</button>
 					</div>
 				</div>
 		)

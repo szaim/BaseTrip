@@ -44,7 +44,7 @@ button:focus, input:focus {
 }
 
 
-/**************************** BODY ****************************/
+/**************************** HOME ****************************/
 
 .body-container {
     margin-top: 4em;
@@ -105,7 +105,6 @@ button:focus, input:focus {
 }
 
 .search-input-right, .search-input-left {
-    z-index: 1;
     position: relative;
     padding: 5px;
     padding-right: 10em;
@@ -130,6 +129,10 @@ button:focus, input:focus {
     top: 4px;
     background: #f6a623;
     border: #f6a623;
+}
+
+.nextText-button {
+    display: none;
 }
 
 /***************** Card Events *****************/
@@ -415,15 +418,35 @@ body {
 
 
 @media screen and (min-width: 801px) and (max-width: 1100px) {
+/**************************** HOME ****************************/
     body{ 
         border: 5px solid blue;
      }
+
+    .search-container {
+        display:flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
     .event-img {
         height: 21em;
         width: 12em;
     }
     .event-title {
         font-size: 16px;
+    }
+
+    .input-wrapper {
+
+    }
+
+    btn-lg {
+        font-size: 1rem;
+    }
+
+    .search-button {
+        right: -5em;
     }
 
 /************************** EVENT-DETAILS PAGE 801-1100 **************************/
@@ -467,12 +490,57 @@ body {
 }
 
 
-    /**************************** BODY 0-800 ****************************/
+/**************************** HOME 0-800 ****************************/
 
 
     body{ 
         border: 5px solid red;
      }
+
+    .search-container {
+        display:flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 70%;
+    }
+
+    .event-img {
+        height: 21em;
+        width: 12em;
+    }
+    .event-title {
+        font-size: 16px;
+    }
+
+    .input-wrapper {
+        width: 40%;
+    }
+
+    btn-lg {
+        font-size: 1rem;
+        padding: .50rem 1rem;
+    }
+
+    .search-button {
+        right: -6em;
+    }
+
+    .nextArrow-button, svg {
+        display: none;
+        padding-top: 25px;
+    }
+
+    .nextText-button {
+        display: block;
+        background: #f6a623;
+        border: #f6a623;
+    }
+
+    .event-img {
+        margin-top: 20px;
+    }
+
+
     .category-wrapper {
         display: block;
     }
