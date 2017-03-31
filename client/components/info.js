@@ -6,6 +6,7 @@ const Info = function(props) {
 		height: 500,
 		width: 300,
 		backgroundSize: 'cover',
+		backgroudPosition: 'center center',
 		backgroundImage: `url(${props.prefix}300x500${props.suffix})`
 	};
 
@@ -33,7 +34,7 @@ const Info = function(props) {
 				</div>
 			</div>
 			<div className='image-container'>
-				<div style={style} >
+				<div className='image-style' style={style} >
 				</div>
 				<Rating image="https://raw.githubusercontent.com/enzoferey/react-rating-system/master/dist/star2.png" fillBG="#f1c40f" initialBG="#6a6a6a" numberStars={5} initialValue={4} editable={false} containerStyle={{ maxWidth: '100px' }}/>
 

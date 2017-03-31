@@ -323,6 +323,7 @@ svg {
 
 .image-container > .stars-container {
     margin-left: 5.5em;
+    margin-top: 10px;
 }
 
 
@@ -432,6 +433,26 @@ body {
 }
 
 @media (max-width: 800px) {
+
+/**************************** Header  0-800 ****************************/
+
+
+.brandName-eventDetail {
+    display: none; 
+}
+
+.search-input {
+    width: 105px;
+}
+
+.search-form-container {
+    margin-right: 45px;
+}
+
+
+    /**************************** BODY 0-800 ****************************/
+
+
     body{ 
         border: 5px solid red;
      }
@@ -459,8 +480,50 @@ body {
     top: 46em;
     }*/
 
+/************************** EVENT-DETAILS PAGE 0-800 **************************/
+
+
+
+
+
+.eventDetail-container {
+    margin-left: 15px;
+    margin-right: 15px;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.tips-content {
+    margin-top: 25px;
+ 
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.map-container {
+    height: 400px;
+}
+
+/*.image-style {
+    height: 400px;
+    width: 280px;
+    background-position: center center;
+}*/
+
+
 
 /**************************** FOOTER Media Queries 0-800 ****************************/
+    
+    .footer-container {
+        margin-top: 75px;
+    }
 
     hr {
         width: 70%;
