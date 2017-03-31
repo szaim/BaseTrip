@@ -4,6 +4,7 @@ const connect = require('react-redux').connect;
 const actions = require('../redux/action');
 const Header = require('./header');
 const Search = require('./container/Search');
+const Footer = require('./footer');
 
 let location;
 
@@ -41,6 +42,7 @@ const Home = React.createClass({
 				<Search />
 				<Categories />
 			</div>
+			<Footer directLink='http://localhost:8080/' brandName='Base Trip' />
 		</div>
 		)
 	}

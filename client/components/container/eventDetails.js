@@ -5,7 +5,8 @@ const MapLocation = require('../map');
 const SearchHeader = require('./SearchHeader');
 const connect = require('react-redux').connect;
 const actions = require('../../redux/action');
-const Category = require('./Category')
+const Category = require('./Category');
+const Footer = require('../footer');
 
 
 const EventDetails = React.createClass({
@@ -32,6 +33,7 @@ const EventDetails = React.createClass({
 					lat={this.props.event.venue.location.lat}
 					long={this.props.event.venue.location.lng} />
 			</div>
+			<Footer directLink='http://localhost:8080/' brandName='Base Trip' />
 			
 		</div>
 

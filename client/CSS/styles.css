@@ -1,5 +1,9 @@
 
 
+button:focus, input:focus {
+    outline: 0;
+}
+
 /**************************** Header ****************************/
 
 .header {
@@ -16,7 +20,7 @@
 
 .brandName {
     font-family: BrushScriptMT;
-    font-size: 48px;
+    font-size: 3em;
     color: #F6A623;
     letter-spacing: -1.16px;
     z-index: 1;
@@ -330,6 +334,39 @@ svg {
 }
 
 
+/**************************** FOOTER ****************************/
+
+.footer-container {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+hr {
+    border-top: 1px solid #8c8b8b;
+    width: 90%;
+}
+
+.footer {
+    height: 60px;
+}
+
+.footer-wrapper {
+    margin-right: 50px;
+    margin-left: 50px;  
+}
+
+.brandName-footer {
+    font-family: BrushScriptMT;
+    font-size: 3em;
+    color: gray;
+    letter-spacing: -1.16px; 
+    margin-left: 25px;
+}
+
+
+
+
+
 /****Animation*******/
 
 body {
@@ -384,6 +421,14 @@ body {
     .event-title {
         font-size: 16px;
     }
+
+
+/**************************** FOOTER Media Queries 801-1100 ****************************/
+
+    hr {
+        width: 80%;
+    }
+
 }
 
 @media (max-width: 800px) {
@@ -413,6 +458,18 @@ body {
     right: 150px;
     top: 46em;
     }*/
+
+
+/**************************** FOOTER Media Queries 0-800 ****************************/
+
+    hr {
+        width: 70%;
+    }
+
+    .brandName-footer {
+        margin-left: 10px;
+    }
+
 }
 
 

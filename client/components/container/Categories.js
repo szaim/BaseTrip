@@ -8,6 +8,7 @@ const Outdoor = require('./Outdoor');
 const Category = require('./Category');
 
 
+
 const Categories = React.createClass({
 	render: function() {
 		return (
@@ -15,6 +16,7 @@ const Categories = React.createClass({
 			<Food />
 			<NightLife />
 			<Outdoor />
+			
 		</div>
 		)
 	}
