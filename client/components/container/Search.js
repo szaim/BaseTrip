@@ -18,6 +18,7 @@ searchItem: function(event){
 
 	render: function() {
 		return (
+			<div>
 			<div className="search-container">
 				<form className="row" onSubmit={this.searchItem}>
 					<div className="row col-xs-6 input-wrapper">
@@ -30,6 +31,16 @@ searchItem: function(event){
 						<button className='btn btn-primary btn-lg search-button' type='submit'>Search</button>
 					</div>
 				</form>
+			</div>
+			<div className='search-mobile-form-container'>
+				<form  onSubmit={this.searchItem}>
+					<div className='search-mobile-wrapper'>
+						<input  className='search-input-mobile' type='text' ref='location' placeholder='Location' required />
+						<input  className='search-input-mobile' type='text' ref='exploreItem' placeholder='Category' required />
+							<button className='btn btn-primary btn-sm search-mobile-button-detail' type='submit'>Search</button>
+					</div>
+				</form>
+			</div>
 			</div>
 			)
 	}
