@@ -26,15 +26,6 @@
   },
   "author": "",
   "license": "ISC",
-  "peerDependencies": {
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1",
-    "react-picture-show": "^1.4.0",
-    "react-redux": "^4.4.5",
-    "react-router": "^2.8.1",
-    "react-slick": "^0.14.6",
-    "react-star-rating": "^1.4.2"
-  },
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
@@ -48,7 +39,14 @@
     "react-stars": "^2.1.0",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
-    "unirest": "^0.5.1"
+    "unirest": "^0.5.1",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-picture-show": "^1.4.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "react-slick": "^0.14.6",
+    "react-star-rating": "^1.4.2"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
