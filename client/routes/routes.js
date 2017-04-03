@@ -10,7 +10,7 @@ const Link = router.Link;
 const App = require('../components/app');
 const Home = require('../components/home');
 const EventDetails = require('../components/container/eventDetails');
-const EventList = require('../components/EventList');
+const EventList = require('../components/eventList');
 
 
 
