@@ -1,5 +1,5 @@
 const actions = require("./action");
-const update = require('react-addons-update');
+const update = require('immutability-helper');
 // const middleware = require('./middleware');
 
 

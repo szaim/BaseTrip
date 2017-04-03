@@ -189,7 +189,7 @@ export const fetchNightLife = (location) => {
 
 export const fetchOutdoor = (location) => {
  return function(dispatch) {
-    let url = '/venue/current/outdoor/' + location;
+    let url = '/venue/current/park/' + location;
     return fetch(url).then(function(response) {
      if (response.status < 200 || response.status >= 300) {
        let error = new Error(response.statusText);
