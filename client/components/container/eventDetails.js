@@ -33,7 +33,7 @@ const EventDetails = React.createClass({
 					lat={this.props.event.venue.location.lat}
 					long={this.props.event.venue.location.lng} />
 			</div>
-			<Footer directLink='http://localhost:8080/' brandName='Base Trip' />
+			<Footer directLink='https://blooming-ocean-74461.herokuapp.com/' brandName='Base Trip' />
 			
 		</div>
 

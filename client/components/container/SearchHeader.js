@@ -22,7 +22,7 @@ searchItem: function(event){
 			<div id='navBar'>
 				<header className="header search-detailPage">
 						<div>
-                    		<a href='http://localhost:8080/' className="brandName brandName-eventDetail" >BaseTrip</a>
+                    		<a href='https://blooming-ocean-74461.herokuapp.com/' className="brandName brandName-eventDetail" >BaseTrip</a>
                     	</div>
                     	<div className='search-form-container'>
 						<form  onSubmit={this.searchItem}>

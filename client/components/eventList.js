@@ -8,7 +8,7 @@ const EventList = function() {
 		<div>
 			<SearchHeader />
 			<Category />
-			<Footer directLink='http://localhost:8080/' brandName='Base Trip' />
+			<Footer directLink='https://blooming-ocean-74461.herokuapp.com/' brandName='Base Trip' />
 		</div>
 	)
 }
