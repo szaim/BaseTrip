@@ -28,6 +28,13 @@ button:focus, input:focus {
     top: -7px;	
 }
 
+.brandName:hover, 
+.brandName:focus,
+.brandName:active {
+    color: #F6A623;
+    text-decoration: none;
+}
+
 .navbar-brand {
 	/* Sign Up: */
     font-family: ArialMT;

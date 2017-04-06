@@ -101,7 +101,7 @@ const reducer = (state, action) => {
 	}
 	else if (action.type === actions.FETCH_NIGHTLIFE_SUCCESS) {
 		//added condition to prevent food list duplication
-		if (state.subFood.length >= 4) {
+		if (state.subNightLife.length >= 4) {
  			return state;
  		} else {
 		for(var i = countertwo; i < counter; i++) {
@@ -133,7 +133,7 @@ const reducer = (state, action) => {
 	}
 	else if (action.type === actions.FETCH_OUTDOOR_SUCCESS) {
 		//added condition to prevent food list duplication
-		if (state.subFood.length >= 4) {
+		if (state.subOutdoor.length >= 4) {
  			return state;
  		} else {
 		for(var i = countertwo; i < counter; i++) {
