@@ -9,7 +9,7 @@ const app = express();
 app.use('/', express.static('build'));
 
 let url = "https://api.foursquare.com/v2/venues/explore";
-
+let latLong;
 
 // Four Square
 // CLIENT_ID
@@ -17,7 +17,7 @@ let clientID = "EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0";
 // CLIENT_SECRET
 let clientSecret = "FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE";
 let date = formatted_date();
-let latLong;
+
 
 // https://api.foursquare.com/v2/venues/4471bf9af964a5209c331fe3/photos?client_id=EKBGEVUEK3PRHMIP3XZA5LJRTYVQIJ34IKBGES2VNXAFTOJ0&client_secret=FK2FTS5XZ511QJAXDMMI0K0NEX3VTWD1HW12ULQZLG0LM1LE
 
@@ -89,7 +89,7 @@ app.get('/venue/explore/:explore/:location', function(req, res) {
    let geocoder = NodeGeocoder(geocoderProvider, httpAdapter, extra);
    geocoder.geocode(location, function(err, res) {
      console.log('location', res);
-     latLong = Math.round(res[0].latitude) + ',' + Math.round(res[0].longitude);
+     latLong = ((res[0].latitude).toFixed(2) + ',' + (res[0].longitude).toFixed(2)).toString();
      console.log('latlong', latLong);
      
    });
