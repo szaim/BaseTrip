@@ -19,7 +19,6 @@ searchItem: function(event){
 	console.log('this hit');
 	console.log(item);
 	this.props.dispatch(actions.fetchExplore(item, location));
-	this.props.dispatch(actions.fetchExplore(this.refs.mobileExploreItem.value, this.refs.mobileLocation.value));
 	hashHistory.push('/eventList');
 },
 
@@ -40,15 +39,6 @@ searchItem: function(event){
 					</div>
 				</form>
 			</div>
-			<div className='search-mobile-form-container'>
-				<form  onSubmit={this.searchItem}>
-					<div className='search-mobile-wrapper'>
-						<input  className='search-input-mobile' type='text' ref='mobileLocation' placeholder='Location' required />
-						<input  className='search-input-mobile' type='text' ref='mobileExploreItem' placeholder='Category' required />
-							<button className='btn btn-primary btn-sm search-mobile-button-detail' type='submit'>Search</button>
-					</div>
-				</form>
-			</div>
 			</div>
 			)
 	}
@@ -59,3 +49,14 @@ searchItem: function(event){
 const Container = connect()(Search);
 
 module.exports = Container;
+
+
+			// <div className='search-mobile-form-container'>
+			// 	<form  onSubmit={this.searchItem}>
+			// 		<div className='search-mobile-wrapper'>
+			// 			<input  className='search-input-mobile' type='text' ref='location' placeholder='Location' required />
+			// 			<input  className='search-input-mobile' type='text' ref='exploreItem' placeholder='Category' required />
+			// 				<button className='btn btn-primary btn-sm search-mobile-button-detail' type='submit'>Search</button>
+			// 		</div>
+			// 	</form>
+			// </div>
