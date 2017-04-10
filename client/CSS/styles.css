@@ -137,6 +137,13 @@ button:focus, input:focus {
     border: #f6a623;
 }
 
+.search-button:hover, 
+.search-button:focus,
+.search-button:active {
+    background: #f6a623;
+    border: #f6a623;
+}
+
 .nextText-button {
     display: none;
 }
@@ -347,6 +354,13 @@ svg {
     margin-top: 150px;
 }
 
+.search-button-detail:hover, 
+.search-button-detail:focus,
+.search-button-detail:active {
+    background: #f6a623;
+    border: #f6a623;
+}
+
 
 /**************************** FOOTER ****************************/
 
@@ -377,6 +391,12 @@ hr {
     margin-left: 25px;
 }
 
+.brandName-footer:hover, 
+.brandName-footer:focus,
+.brandName-footer:active {
+    color: gray;
+    text-decoration: none;
+}
 
 
 
@@ -621,7 +641,9 @@ body {
 
 
 
-
+.brandName-eventDetail {
+    display: none;
+}
 
 .eventDetail-container {
     margin-right: 100px;
