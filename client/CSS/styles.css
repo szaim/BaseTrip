@@ -167,6 +167,10 @@ button:focus, input:focus {
     display: none;
 }
 
+.search-mobile-form-container {
+    display: none;
+}
+
 /***************** Card Events *****************/
 
 .event-img {

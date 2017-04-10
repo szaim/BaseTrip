@@ -2,6 +2,7 @@ const React = require('react');
 const connect = require('react-redux').connect;
 const actions = require('../../redux/action');
 import { hashHistory } from 'react-router';
+const SearchMobile = require('./SearchMobile');
 
 const Search = React.createClass({
 
@@ -26,6 +27,7 @@ searchItem: function(event){
 	render: function() {
 		return (
 			<div>
+			<SearchMobile />
 			<div className="search-container">
 				<form className="row" onSubmit={this.searchItem}>
 					<div className="row col-xs-6 input-wrapper">
