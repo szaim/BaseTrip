@@ -4,6 +4,25 @@ button:focus, input:focus {
     outline: 0;
 }
 
+/**************************** Loader ****************************/
+
+.loader-container {
+    margin: auto;
+    text-align: center;
+    padding-top: 300px;
+}
+
+.loader {
+    font-family: BrushScriptMT;
+    font-size: 3.5em;
+    color: #F6A623;
+    letter-spacing: -1.16px;
+}
+
+.fa-spinner {
+    color: #F6A623;
+}
+
 /**************************** Header ****************************/
 
 .header {

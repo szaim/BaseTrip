@@ -5,13 +5,17 @@ const actions = require('../redux/action');
 const Header = require('./header');
 const Search = require('./container/Search');
 const Footer = require('./footer');
+const Loader = require('./loader');
 
 let location;
 
 
-
-
 const Home = React.createClass({
+	getInitialState: function() {
+		return {
+			loading: true
+		};
+	},
 
 	componentWillMount: function() {
 			if (navigator.geolocation) {
@@ -27,11 +31,16 @@ const Home = React.createClass({
 			}
 
 		console.log('location from geo', location);
+			
+			setTimeout(() => {
+				this.setState({loading: false});
+			}, 9000);
+		
 
 	},
 	render: function() {
-		return (
-		<div>
+		let content = this.state.loading ? <Loader brandName='BaseTrip' /> : 
+				<div>
 			<Header />
 			<div className="container body-container">
 				<div>
@@ -44,6 +53,8 @@ const Home = React.createClass({
 			</div>
 			<Footer directLink='https://blooming-ocean-74461.herokuapp.com/' brandName='Base Trip' />
 		</div>
+		return (
+			<div>{content}</div>
 		)
 	}
 });
