@@ -93,11 +93,17 @@ app.get('/venue/explore/:explore/:location', function(req, res) {
      console.log('latlong', latLong);
      
    });
-
-	unirest.get('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + latLong + '&query=' + query + '&v=' + date + '&venuePhotos=1')
-	.end(function(data){
-		return res.send(data);
-	});
+   //latlong is showing undefined (need to fix)
+   console.log('latlong after geocoder', latLong);
+   function getData() {
+   	unirest.get('https://api.foursquare.com/v2/venues/explore?client_id=' + clientID + '&client_secret=' + clientSecret + '&ll=' + latLong + '&query=' + query + '&v=' + date + '&venuePhotos=1')
+   	.end(function(data){
+         console.log('getDate hit');
+   		return res.send(data);
+   	});
+   }
+   //using setTimeout since geocoder callback load time is delayed preventing the latLong variable to update
+   setTimeout(getData, 1500);
 });
 
 
