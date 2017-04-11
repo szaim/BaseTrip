@@ -539,6 +539,10 @@ body {
         margin-right: 45px;
     }
 
+    .brandName {
+        font-size: 2.5em;
+    }
+
 
 /**************************** HOME 0-800 ****************************/
 
@@ -714,6 +718,7 @@ body {
 
     .brandName-footer {
         margin-left: 10px;
+        font-size: 2.5em;
     }
 
 }
