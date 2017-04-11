@@ -13,7 +13,7 @@ button:focus, input:focus {
 }
 
 .loader {
-    font-family: BrushScriptMT;
+    font-family: BrushScriptMT, 'Kaushan Script', cursive;
     font-size: 3.5em;
     color: #F6A623;
     letter-spacing: -1.16px;
@@ -38,7 +38,7 @@ button:focus, input:focus {
 }
 
 .brandName {
-    font-family: BrushScriptMT;
+    font-family: BrushScriptMT, 'Kaushan Script', cursive;
     font-size: 3em;
     color: #F6A623;
     letter-spacing: -1.16px;
@@ -407,7 +407,7 @@ hr {
 }
 
 .brandName-footer {
-    font-family: BrushScriptMT;
+    font-family: BrushScriptMT, 'Kaushan Script', cursive;
     font-size: 3em;
     color: gray;
     letter-spacing: -1.16px; 
